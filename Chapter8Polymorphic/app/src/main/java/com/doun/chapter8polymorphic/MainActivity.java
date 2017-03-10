@@ -15,18 +15,74 @@ public class MainActivity extends AppCompatActivity {
         String msgToShow = "";
 
         //practice 8.1
-        Cycle unicycle = new Unicycle();
-        msgToShow += unicycle.ride();
+        Unicycle unicycle = new Unicycle();
+        msgToShow += ride(unicycle);
         msgToShow += "\n";
-        Cycle bicycle = new Bicycle();
-        msgToShow += bicycle.ride();
+        Bicycle bicycle = new Bicycle();
+        msgToShow += ride(bicycle);
         msgToShow += "\n";
-        Cycle tricycle = new Tricycle();
-        msgToShow += tricycle.ride();
+        Tricycle tricycle = new Tricycle();
+        msgToShow += ride(tricycle);
         msgToShow += "\n";
 
-        //practice 8.2
+
+        //practice 8.5
+//        Unicycle unicycle = new Unicycle();
+//        msgToShow += wheels(unicycle);
+//        msgToShow += "\n";
+//        Bicycle bicycle = new Bicycle();
+//        msgToShow += wheels(bicycle);
+//        msgToShow += "\n";
+//        Tricycle tricycle = new Tricycle();
+//        msgToShow += wheels(tricycle);
+//        msgToShow += "\n";
+
+
+//        //practice 8.6 8.7
+//        Instrument[] orchestra = {
+//                new Wind(),
+//                new Percussion(),
+//                new Stringed(),
+//                new Brass(),
+//                new Woodwind(),
+//                new NewInstrument()
+//        };
+//        msgToShow += Music3.tuneAll(orchestra);
+//        msgToShow += "\n";
+//        msgToShow += "\n";
+//        Instrument ins= new Instrument();
+//        msgToShow += ins;
+
+
+
+    //practice 8.8
+
+//    RandomInstrumentGenerator gen = new RandomInstrumentGenerator();
+//    Instrument[] orchestra = new Instrument[9];
+//    // Fill up the array with shapes:
+//    for(int i = 0; i < orchestra.length; i++)
+//        orchestra[i] = gen.next();
+//    // Make polymorphic method calls:
+//    msgToShow += Music3.tuneAll(orchestra);
+
+        //practice 8.10
+//        Practice10 practice10ImportClass = new Practice10ImportClass();
+//        msgToShow += practice10ImportClass.funOne();
+
+
+
+
+
+
 
         msgTextView.setText(msgToShow);
+    }
+
+
+    public String ride(Cycle cycle){
+        return cycle.beRide();
+    }
+    public String wheels(Cycle cycle){
+        return cycle.wheels();
     }
 }
