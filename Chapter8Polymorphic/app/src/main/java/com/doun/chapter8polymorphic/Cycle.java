@@ -14,6 +14,10 @@ public class Cycle {
     public String wheels(){
         return TAG + "0";
     }
+
+    public String balance(){
+        return "Cycle Balance";
+    }
 }
 
 class Unicycle extends Cycle{
@@ -27,6 +31,9 @@ class Unicycle extends Cycle{
     public String wheels(){
         return TAG + "1";
     }
+    public String balance(){
+        return "Unicycle Balance";
+    }
 }
 
 class Bicycle extends Cycle{
@@ -38,6 +45,10 @@ class Bicycle extends Cycle{
 
     public String wheels(){
         return TAG + "2";
+    }
+
+    public String balance(){
+        return "Bicycle Balance";
     }
 }
 
