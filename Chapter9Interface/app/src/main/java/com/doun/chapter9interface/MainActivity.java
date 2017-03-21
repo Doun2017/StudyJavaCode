@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 //        E04_AbstractBase.test2(new Extended2());
 
         //practice 9.5
-        ThreeFunctions threeFunctions = new ThreeFunctions();
-        threeFunctions.a();
-        threeFunctions.b();
-        threeFunctions.c();
+//        ThreeFunctions threeFunctions = new ThreeFunctions();
+//        threeFunctions.a();
+//        threeFunctions.b();
+//        threeFunctions.c();
         //practice 9.6 略
 
         //practice 9.8
@@ -61,14 +61,19 @@ public class MainActivity extends AppCompatActivity {
 //        tuneAll(orchestra);
 
         //practice 9.10
-        Playable[] orchestra = {
-                new Wind(),
-                new Percussion(),
-                new Stringed(),
-                new Brass(),
-                new Woodwind()
-        };
-        tuneAll(orchestra);
+//        Playable[] orchestra = {
+//                new Wind(),
+//                new Percussion(),
+//                new Stringed(),
+//                new Brass(),
+//                new Woodwind()
+//        };
+//        tuneAll(orchestra);
+
+        //practice 9.11
+        String w = new String("abcdefg");
+        Apply.process(new LettersExchangerAdapter(new LettersExchanger()), w);
+        Apply.process(new LettersExchangerAdapter(new LettersExchanger()), w);
 
 
 
