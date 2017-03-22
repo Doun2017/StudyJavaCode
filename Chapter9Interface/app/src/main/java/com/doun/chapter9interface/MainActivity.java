@@ -71,9 +71,46 @@ public class MainActivity extends AppCompatActivity {
 //        tuneAll(orchestra);
 
         //practice 9.11
-        String w = new String("abcdefg");
-        Apply.process(new LettersExchangerAdapter(new LettersExchanger()), w);
-        Apply.process(new LettersExchangerAdapter(new LettersExchanger()), w);
+//        String w = new String("abcdefg");
+//        Apply.process(new LettersExchangerAdapter(new LettersExchanger()), w);
+//        Apply.process(new LettersExchangerAdapter(new LettersExchanger()), w);
+
+        //practice 9.12
+//        Hero h = new Hero();
+//        Adventure.t(h); // Treat it as a CanFight
+//        Adventure.u(h); // Treat it as a CanSwim
+//        Adventure.v(h); // Treat it as a CanFly
+//        Adventure.w(h); // Treat it as an ActionCharacter
+//        Adventure.z(h);
+
+        //practice 9.13
+//        ImplementClass implementClass = new ImplementClass();
+//        FirstInterface firstInterface = implementClass;
+//        firstInterface.first();
+//        SecondInterface secondInterface = implementClass;
+//        secondInterface.first();
+//        secondInterface.second();
+//        ThirdInterface thirdInterface = implementClass;
+//        thirdInterface.first();
+//        thirdInterface.third();
+
+        //practice 9.14 15
+        SonClass sonClass = new SonClass();
+        SonClass.A(sonClass);
+        SonClass.B(sonClass);
+        SonClass.C(sonClass);
+        SonClass.D(sonClass);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
