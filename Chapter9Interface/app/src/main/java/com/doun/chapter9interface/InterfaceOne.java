@@ -5,6 +5,7 @@ package com.doun.chapter9interface;
  */
 
 public interface InterfaceOne {
+    int a=9;
     void OneA();
     void OneB();
 }

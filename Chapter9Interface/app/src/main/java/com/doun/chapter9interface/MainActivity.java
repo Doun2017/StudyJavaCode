@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.Scanner;
+
 import static com.doun.chapter9interface.Music5.tuneAll;
 
 public class MainActivity extends AppCompatActivity {
@@ -95,22 +97,49 @@ public class MainActivity extends AppCompatActivity {
 //        thirdInterface.third();
 
         //practice 9.14 15
-        SonClass sonClass = new SonClass();
-        SonClass.A(sonClass);
-        SonClass.B(sonClass);
-        SonClass.C(sonClass);
-        SonClass.D(sonClass);
+//        SonClass sonClass = new SonClass();
+//        SonClass.A(sonClass);
+//        SonClass.B(sonClass);
+//        SonClass.C(sonClass);
+//        SonClass.D(sonClass);
 
 
+        //practice 9.16
+//        Scanner s = new Scanner(new AdaptedRandomChars(7));
+//        while(s.hasNext())
+//        {
+//            msgToShow += s.nextLine();
+//            msgToShow += "\n";
+//        }
 
 
+        //practice 9.17
+//        InterfaceOne interfaceOne = new SonClass();
+//        //interfaceOne.a=2; //final
+//        int i=InterfaceOne.a;//static
 
+        //practice 9.18
+//        UnicycleFactory unicycleFactory = new UnicycleFactory();
+//        Cycle cycle1 = unicycleFactory.getCycle();
+//        cycle1.f();
+//        BicycleFactory bicycleFactory = new BicycleFactory();
+//        Cycle cycle2 = bicycleFactory.getCycle();
+//        cycle2.f();
+//        TricycleFactory tricycleFactory = new TricycleFactory();
+//        Cycle cycle3 = tricycleFactory.getCycle();
+//        cycle3.f();
 
+        //practice 9.19
+        MyGameFactory coinGameFactory = new CoinGameFactory();
+        MyGameFactory diceGameFactory = new DiceGameFactory();
+        MyGame myGame1 = coinGameFactory.getGame();
+        MyGame myGame2 = diceGameFactory.getGame();
 
+        msgToShow += myGame1.play();
+        msgToShow += "\n";
 
-
-
-
+        msgToShow += myGame2.play();
+        msgToShow += "\n";
 
 
 
