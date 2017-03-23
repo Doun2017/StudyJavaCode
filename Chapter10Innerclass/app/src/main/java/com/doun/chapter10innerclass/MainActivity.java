@@ -57,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice10.7
-        E07practiceClass practice7 = new E07practiceClass();
-        practice7.useInnerClass();
+//        E07practiceClass practice7 = new E07practiceClass();
+//        practice7.useInnerClass();
 
         //practice10.8
         //详见E07practiceClass。外部类可通过内部类对象访问其私有元素
@@ -78,6 +78,85 @@ public class MainActivity extends AppCompatActivity {
 //        E11practiceClass e11practiceClass = new E11practiceClass();
 //        Forcall forcall = e11practiceClass.getForcall();
 //        // E11practiceClass.E11InnerClass e = (E11practiceClass.E11InnerClass)forcall;
+
+        //practice10.12
+//        E12practiceClass practice12 = new E12practiceClass();
+//        msgToShow += practice12.useInnerClass();
+
+        //practice10.13
+//        E13practiceInterface e13practiceInterface = new E13practiceInterface(){
+//            @Override
+//            public void f() {}
+//        };
+//        e13practiceInterface.f();
+
+        //practice10.14
+//        DangerousMonster dangerousMonster = new DangerousMonster() {
+//            @Override
+//            public void destroy() {}
+//            @Override
+//            public void menace() {}
+//        };
+//        Vampire vampire = new Vampire(){
+//            @Override
+//            public void menace() {}
+//            @Override
+//            public void destroy() {}
+//            @Override
+//            public void kill() {}
+//            @Override
+//            public void drinkBlood() {}
+//        };
+
+        //practice10.15
+//        E15Class e15Class = AnotherE15Class.createE15();
+//        msgToShow += e15Class.getB();
+
+
+        //practice10.16
+//        Cycle cycle1 = Unicycle.cycleFactory.getCycle();
+//        msgToShow +=cycle1.f();
+//        Cycle cycle2 = Bicycle.cycleFactory.getCycle();
+//        msgToShow +=cycle2.f();
+//        Cycle cycle3 = Tricycle.cycleFactory.getCycle();
+//        msgToShow +=cycle3.f();
+
+        //practice10.17
+        MyGame myGame1 = CoinGame.myGameFactory.getGame();
+        MyGame myGame2 = DiceGame.myGameFactory.getGame();
+
+        msgToShow += myGame1.play();
+        msgToShow += "\n";
+
+        msgToShow += myGame2.play();
+        msgToShow += "\n";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
