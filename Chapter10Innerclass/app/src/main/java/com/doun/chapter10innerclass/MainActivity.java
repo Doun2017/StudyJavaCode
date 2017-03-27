@@ -122,23 +122,64 @@ public class MainActivity extends AppCompatActivity {
 //        msgToShow +=cycle3.f();
 
         //practice10.17
-        MyGame myGame1 = CoinGame.myGameFactory.getGame();
-        MyGame myGame2 = DiceGame.myGameFactory.getGame();
+//        MyGame myGame1 = CoinGame.myGameFactory.getGame();
+//        MyGame myGame2 = DiceGame.myGameFactory.getGame();
+//
+//        msgToShow += myGame1.play();
+//        msgToShow += "\n";
+//
+//        msgToShow += myGame2.play();
+//        msgToShow += "\n";
 
-        msgToShow += myGame1.play();
-        msgToShow += "\n";
+        //practice10.18
+//        E18Class.E18InnerClass e18InnerClass = new E18Class.E18InnerClass();
+//        msgToShow += e18InnerClass.getfa();
+//        msgToShow += "\n";
 
-        msgToShow += myGame2.play();
-        msgToShow += "\n";
+        //practice10.19
+//        E18Class.E18InnerClass e18InnerClass = new E18Class.E18InnerClass();
+//        msgToShow += e18InnerClass.getfa();
+//        msgToShow += "\n";
+//        E18Class1 e18Class1 = new E18Class1();
+//        E18Class1.E18InnerClass1 e18InnerClass1 = e18Class1.new E18InnerClass1();
+//        msgToShow += e18InnerClass1.getfa();
+//        msgToShow += "\n";
 
+        //practice10.20  10.21
+//        E20Interface.InnerClassE20 innerClassE20 = new E20Interface.InnerClassE20();
+//        msgToShow += innerClassE20.getInnerInt();
+//        msgToShow += "\n";
+//        E20class e20class = new E20class();
+//        msgToShow += e20class.getInt();
+//        msgToShow += "\n";
+//
+//        msgToShow += E20Interface.InnerClassE20.getInterfaceInt(e20class);
+//        msgToShow += "\n";
 
+        //practice10.22
+//        Sequence sequence = new Sequence(10);
+//        for (int i=0; i<10; i++){
+//            sequence.add(new Outer("outer"+i));
+//        }
+//
+//        Selector selector = sequence.reverseSelector();
+//        while(!selector.end()) {
+//            msgToShow+=(selector.current() + "\n");
+//            selector.next();
+//        }
 
-
-
-
-
-
-
+        //practice10.23
+        A a[] = new A[3];
+        a[0] = new A("0");
+        a[1] = new A("1");
+        a[2] = new A("2");
+        B b = new B();
+        b.setUInB(a[0].getU());
+        b.setUInB(a[1].getU());
+        b.setUInB(a[2].getU());
+        b.eachUInB();
+        b.setNull(2);
+        b.eachUInB();
 
 
 

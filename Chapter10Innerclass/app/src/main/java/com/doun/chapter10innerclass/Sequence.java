@@ -11,24 +11,50 @@ interface Selector {
 public class Sequence {
   private Object[] items;
   private int next = 0;
+
   public Sequence(int size) { items = new Object[size]; }
+
   public void add(Object x) {
     if(next < items.length)
       items[next++] = x;
   }
+
 //  private class SequenceSelector implements Selector {
-  public class SequenceSelector implements Selector {
-    private int i = 0;
-    public boolean end() { return i == items.length; }
+public class SequenceSelector implements Selector {
+  private int i = 0;
+  public boolean end() { return i == items.length; }
+  public Object current() { return items[i]; }
+  public void next() { if(i < items.length) i++; }
+  public Sequence Outer(){
+    return Sequence.this;
+  }
+}
+
+  public Selector selector() {
+    return new SequenceSelector();
+  }
+
+  public class ReverseSequenceSelector implements Selector {
+    private int i = items.length-1;
+    public boolean end() { return i == -1; }
     public Object current() { return items[i]; }
-    public void next() { if(i < items.length) i++; }
+    public void next() { if(i >= 0) i--; }
     public Sequence Outer(){
       return Sequence.this;
     }
   }
-  public Selector selector() {
-    return new SequenceSelector();
-  }	
+
+  public Selector reverseSelector() {
+    return new ReverseSequenceSelector();
+  }
+
+
+
+
+
+
+
+
   public static void main(String[] args) {
     Sequence sequence = new Sequence(10);
     for(int i = 0; i < 10; i++)
