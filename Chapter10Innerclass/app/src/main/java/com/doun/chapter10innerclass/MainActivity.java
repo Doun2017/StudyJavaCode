@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     TextView msgTextView;
     @Override
@@ -169,20 +171,53 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice10.23
-        A a[] = new A[3];
-        a[0] = new A("0");
-        a[1] = new A("1");
-        a[2] = new A("2");
-        B b = new B();
-        b.setUInB(a[0].getU());
-        b.setUInB(a[1].getU());
-        b.setUInB(a[2].getU());
-        b.eachUInB();
-        b.setNull(2);
-        b.eachUInB();
+//        A a[] = new A[3];
+//        a[0] = new A("0");
+//        a[1] = new A("1");
+//        a[2] = new A("2");
+//        B b = new B();
+//        b.setUInB(a[0].getU());
+//        b.setUInB(a[1].getU());
+//        b.setUInB(a[2].getU());
+//        b.eachUInB();
+//        b.setNull(2);
+//        b.eachUInB();
 
+        //practice10.24
+//        GreenhouseControls gc = new GreenhouseControls();
+//        Event[] eventList = {
+//                gc.new ThermostatNight(0),
+//                gc.new LightOn(200),
+//                gc.new LightOff(400),
+//                gc.new WaterOn(600),
+//                gc.new WaterOff(800),
+//                gc.new FanOn(900),
+//                gc.new FanOff(1000),
+//                gc.new ThermostatDay(1400)
+//        };
+//        for(Event e : eventList)
+//            gc.addEvent(e);
+//        gc.run();
 
+        //practice10.25
+        GreenhouseControls1 gc1 = new GreenhouseControls1();
+        Event[] eventList1 = {
+                gc1.new SprinklerOn(33),
+                gc1.new SprinklerOff(144),
+                gc1.new ThermostatNight(0),
+                gc1.new LightOn(200),
+                gc1.new LightOff(400),
+                gc1.new WaterOn(600),
+                gc1.new WaterOff(800),
+                gc1.new FanOn(900),
+                gc1.new FanOff(1000),
+                gc1.new ThermostatDay(1400),
 
+                gc1.new SprinklerOn(33),
+                gc1.new SprinklerOff(144)};
+        for(Event e : eventList1)
+            gc1.addEvent(e);
+        gc1.run();
 
 
 
