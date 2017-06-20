@@ -44,13 +44,31 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.4
-        try{
-            throw new MyException("message");
-        } catch (MyException e){
-            e.showStr();
-            Log.d(TAG, e.getMessage());
-            e.printStackTrace();
+//        try{
+//            throw new MyException("message");
+//        } catch (MyException e){
+//            e.showStr();
+//            Log.d(TAG, e.getMessage());
+//            e.printStackTrace();
+//        }
+
+
+        //practice12.5
+        //ArrayList<String> array = new ArrayList<>();
+        String array[] = new String[]{"abc", "def"};
+        int len=10;
+        while (len >= 0){
+            try{
+                String str = array[len];
+                Log.d(TAG, str+len);
+                break;
+            }catch (ArrayIndexOutOfBoundsException e){
+                e.printStackTrace();
+            }finally {
+                len--;
+            }
         }
+
 
     }
 }
