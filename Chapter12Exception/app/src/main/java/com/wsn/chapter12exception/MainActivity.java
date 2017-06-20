@@ -35,16 +35,36 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.3
-        //ArrayList<String> array = new ArrayList<>();
-        String array[] = new String[2];
+//        //ArrayList<String> array = new ArrayList<>();
+//        String array[] = new String[2];
+//        try{
+//            String str = array[2];
+//        }catch (ArrayIndexOutOfBoundsException e){
+//            e.printStackTrace();
+//        }
+
+        //practice12.4
         try{
-            String str = array[2];
-        }catch (ArrayIndexOutOfBoundsException e){
+            throw new MyException("message");
+        } catch (MyException e){
+            e.showStr();
+            Log.d(TAG, e.getMessage());
             e.printStackTrace();
         }
 
-        //practice12.4
+    }
+}
 
 
+
+class MyException extends Exception{
+    String str;
+    MyException(String string){
+        super(string);
+        str = string;
+    }
+
+    public void showStr(){
+        Log.d("MyException", str);
     }
 }
