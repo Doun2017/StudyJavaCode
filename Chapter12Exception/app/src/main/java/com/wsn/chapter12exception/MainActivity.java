@@ -82,9 +82,16 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.8
+//        try{
+//            throwFun();
+//        } catch (MyException e){
+//            e.printStackTrace();
+//        }
+
+        //practice12.9
         try{
-            throwFun();
-        } catch (MyException e){
+            throw3Exception(2);
+        }catch (Exception e){
             e.printStackTrace();
         }
 
@@ -94,6 +101,16 @@ public class MainActivity extends AppCompatActivity {
     private void throwFun() throws MyException{
         throw new MyException("my Exception");
     }
+    private void throw3Exception(int i) throws MyException, MyLogException1, MyLogException2{
+        if (i<0)
+            throw new MyException("my Exception");
+        if (i==0)
+            throw new MyLogException1("MyLogException1");
+        if (i>0)
+            throw new MyLogException2(22);
+        return;
+    }
+
 }
 
 
