@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 //            e.printStackTrace();
 //        }
 
-        //practice12.3
+        //practice12.3 12.7
 //        //ArrayList<String> array = new ArrayList<>();
 //        String array[] = new String[2];
 //        try{
@@ -54,35 +54,62 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice12.5
-        //ArrayList<String> array = new ArrayList<>();
-        String array[] = new String[]{"abc", "def"};
-        int len=10;
-        while (len >= 0){
-            try{
-                String str = array[len];
-                Log.d(TAG, str+len);
-                break;
-            }catch (ArrayIndexOutOfBoundsException e){
-                e.printStackTrace();
-            }finally {
-                len--;
-            }
+//        String array[] = new String[]{"abc", "def"};
+//        int len=10;
+//        while (len >= 0){
+//            try{
+//                String str = array[len];
+//                Log.d(TAG, str+len);
+//                break;
+//            }catch (ArrayIndexOutOfBoundsException e){
+//                e.printStackTrace();
+//            }finally {
+//                len--;
+//            }
+//        }
+
+        //practice12.6
+        try{
+            throw new MyLogException1("MyLogException1");
+        } catch (MyLogException1 e){
+            e.printStackTrace();
         }
 
+        try{
+            throw new MyLogException2(55);
+        } catch (MyLogException2 e){
+            e.printStackTrace();
+        }
+    }
+}
 
+
+//
+//class MyException extends Exception{
+//    String str;
+//    MyException(String string){
+//        super(string);
+//        str = string;
+//    }
+//
+//    public void showStr(){
+//        Log.d("MyException", str);
+//    }
+//}
+
+
+class MyLogException1 extends Exception{
+    MyLogException1(String string){
+        super(string);
+        Log.d("MyLogException", string);
     }
 }
 
 
 
-class MyException extends Exception{
-    String str;
-    MyException(String string){
-        super(string);
-        str = string;
-    }
-
-    public void showStr(){
-        Log.d("MyException", str);
+class MyLogException2 extends Exception{
+    MyLogException2(int i){
+        super("code = "+i);
+        Log.d("MyLogException", "code = "+i);
     }
 }
