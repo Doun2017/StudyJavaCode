@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = "MainActivity";
 
@@ -24,12 +27,24 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.2
-        String str=null;
+//        String str=null;
+//        try{
+//            Log.d(TAG, str);
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
+
+        //practice12.3
+        ArrayList<String> array = new ArrayList<>();
+        for (int i=0; i<10; i++){
+            array.add(""+i);
+        }
         try{
-            Log.d(TAG, str);
-        } catch (Exception e){
+            String str = array.get(11);
+        }catch (ArrayIndexOutOfBoundsException e){
             e.printStackTrace();
         }
+
 
     }
 }
