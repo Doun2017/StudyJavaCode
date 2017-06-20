@@ -35,15 +35,15 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.3
-        ArrayList<String> array = new ArrayList<>();
-        for (int i=0; i<10; i++){
-            array.add(""+i);
-        }
+        //ArrayList<String> array = new ArrayList<>();
+        String array[] = new String[2];
         try{
-            String str = array.get(11);
+            String str = array[2];
         }catch (ArrayIndexOutOfBoundsException e){
             e.printStackTrace();
         }
+
+        //practice12.4
 
 
     }
