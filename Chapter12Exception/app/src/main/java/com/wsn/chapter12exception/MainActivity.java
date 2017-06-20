@@ -69,33 +69,46 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.6
+//        try{
+//            throw new MyLogException1("MyLogException1");
+//        } catch (MyLogException1 e){
+//            e.printStackTrace();
+//        }
+//
+//        try{
+//            throw new MyLogException2(55);
+//        } catch (MyLogException2 e){
+//            e.printStackTrace();
+//        }
+
+        //practice12.8
         try{
-            throw new MyLogException1("MyLogException1");
-        } catch (MyLogException1 e){
+            throwFun();
+        } catch (MyException e){
             e.printStackTrace();
         }
 
-        try{
-            throw new MyLogException2(55);
-        } catch (MyLogException2 e){
-            e.printStackTrace();
-        }
+
+    }
+
+    private void throwFun() throws MyException{
+        throw new MyException("my Exception");
     }
 }
 
 
-//
-//class MyException extends Exception{
-//    String str;
-//    MyException(String string){
-//        super(string);
-//        str = string;
-//    }
-//
-//    public void showStr(){
-//        Log.d("MyException", str);
-//    }
-//}
+
+class MyException extends Exception{
+    String str;
+    MyException(String string){
+        super(string);
+        str = string;
+    }
+
+    public void showStr(){
+        Log.d("MyException", str);
+    }
+}
 
 
 class MyLogException1 extends Exception{
