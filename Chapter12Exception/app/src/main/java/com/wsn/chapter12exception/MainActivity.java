@@ -13,14 +13,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //practice12.1
+//        try{
+//            throw new Exception("message");
+//
+//        } catch (Exception e){
+//            Log.d(TAG, e.getMessage());
+//
+//        }finally {
+//            Log.d(TAG, "finally executed");
+//        }
+
+        //practice12.2
+        String str=null;
         try{
-            throw new Exception("message");
-
+            Log.d(TAG, str);
         } catch (Exception e){
-            Log.d(TAG, e.getMessage());
-
-        }finally {
-            Log.d(TAG, "finally executed");
+            e.printStackTrace();
         }
 
     }
