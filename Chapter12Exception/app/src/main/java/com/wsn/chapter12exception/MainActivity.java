@@ -110,11 +110,28 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.12
-        Sequence sequence = new Sequence(3);
-        sequence.add(new String("a"));
-        sequence.add(new String("b"));
-        sequence.add(new String("c"));
-        sequence.add(new String("d"));
+//        Sequence sequence = new Sequence(3);
+//        sequence.add(new String("a"));
+//        sequence.add(new String("b"));
+//        sequence.add(new String("c"));
+//        sequence.add(new String("d"));
+
+        //practice12.13
+//        String str=null;
+//        try{
+//            Log.d(TAG, str);
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }finally {
+//            Log.d(TAG, "finally");
+//        }
+
+        //practice12.14
+        f14(true); //不会打印"release source"
+
+        //practice12.15
+//        f15(true);  //会打印"release source"
+
 
 
 
@@ -122,6 +139,41 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //会抛出抛出RuntimeException 并且不会打印"release source"
+    private void f14(boolean throwRuntimeException){
+        try{
+            if (throwRuntimeException){
+                //抛出RuntimeException
+                String str=null;
+                Log.d(TAG, str);
+            }
+
+            g();
+            Log.e(TAG, "release source");
+        }catch (MyLogException1 exception1){
+            exception1.printStackTrace();
+            Log.e(TAG, "release source");
+        }
+
+    }
+
+    //会抛出抛出RuntimeException 但是会打印"release source"
+    private void f15(boolean throwRuntimeException){
+        try{
+            if (throwRuntimeException){
+                //抛出RuntimeException
+                String str=null;
+                Log.d(TAG, str);
+            }
+
+            g();
+            Log.e(TAG, "release source");
+        }catch (MyLogException1 exception1){
+            exception1.printStackTrace();
+        }finally {
+            Log.e(TAG, "release source");
+        }
+    }
 
     private void f11(){
         try{
