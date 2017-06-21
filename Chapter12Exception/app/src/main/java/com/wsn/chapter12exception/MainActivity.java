@@ -138,14 +138,77 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice12.17
-        f17();
+//        f17();
 
+
+//        String str=null;
+//        try{
+//            Log.d(TAG, str);
+//        }finally {
+//            return;
+//        }
+
+        //practice12.18
+//        f18();
+
+        //practice12.19
+//        f19_1();
+        f19_2();
 
 
     }
 
 
+    private void f19_1() {
+            try {
+                LostMessage1 lm = new LostMessage1();
+                try {
+                    lm.f();
+                } catch (Exception e) {
+                    Log.e("LostMessage", e.toString());
+                }finally {
+                    lm.dispose();
+                }
+            } catch (Exception e) {
+//            System.out.println(e);
+                Log.e("LostMessage", e.toString());
+            }
+    }
+    private void f19_2() {
+            try {
+                LostMessage1 lm = new LostMessage1();
+                try {
+                    lm.f();
+                } finally {
+                    try {
+                        lm.dispose();
+                    }catch (Exception e) {
+                        Log.e("LostMessage", e.toString());
+                    }
+                }
+            } catch (Exception e) {
+//            System.out.println(e);
+                Log.e("LostMessage", e.toString());
+            }
+    }
 
+
+    private void f18() {
+        try {
+            LostMessage lm = new LostMessage();
+            try {
+                try {
+                    lm.f();
+                } finally {
+                    lm.dispose();
+                }
+            }finally {
+                lm.antherDispose();
+            }
+        } catch(Exception e) {
+            Log.e("LostMessage", e.toString());
+        }
+    }
 
     private void f17() {
         Frog frog = new Frog();
