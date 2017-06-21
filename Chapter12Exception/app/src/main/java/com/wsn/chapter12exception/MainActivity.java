@@ -96,8 +96,15 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.10
+//        try{
+//            f();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
+        //practice12.11
         try{
-            f();
+            f11();
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -110,6 +117,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private void f11()throws RuntimeException{
+        try{
+            g();
+        }catch (MyLogException1 exception1){
+            throw new RuntimeException(exception1);
+        }
+    }
 
     private void f()throws MyLogException2{
         try{
