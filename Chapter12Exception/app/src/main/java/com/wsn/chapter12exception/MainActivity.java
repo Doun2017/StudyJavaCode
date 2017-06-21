@@ -134,9 +134,28 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice12.16
-        f16();
+//        f16();
 
 
+        //practice12.17
+        f17();
+
+
+
+    }
+
+
+
+
+    private void f17() {
+        Frog frog = new Frog();
+        try {
+            // Code and exception handling...
+            return;
+        } finally {
+            Log.e("Frog", "Bye!");
+            frog.dispose();
+        }
 
 
     }
