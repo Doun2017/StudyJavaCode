@@ -103,12 +103,18 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.11
-        try{
-            f11();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+//        try{
+//            f11();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
 
+        //practice12.12
+        Sequence sequence = new Sequence(3);
+        sequence.add(new String("a"));
+        sequence.add(new String("b"));
+        sequence.add(new String("c"));
+        sequence.add(new String("d"));
 
 
 
@@ -117,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void f11()throws RuntimeException{
+    private void f11(){
         try{
             g();
         }catch (MyLogException1 exception1){
@@ -173,7 +179,7 @@ class MyException extends Exception{
 class MyLogException1 extends Exception{
     MyLogException1(String string){
         super(string);
-        Log.d("MyLogException", string);
+        Log.e("MyLogException1", string);
     }
 }
 
@@ -182,6 +188,6 @@ class MyLogException1 extends Exception{
 class MyLogException2 extends Exception{
     MyLogException2(int i){
         super("code = "+i);
-        Log.d("MyLogException", "code = "+i);
+        Log.e("MyLogException2", "code = "+i);
     }
 }
