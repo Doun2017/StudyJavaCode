@@ -89,14 +89,42 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.9
+//        try{
+//            throw3Exception(2);
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+
+        //practice12.10
         try{
-            throw3Exception(2);
+            f();
         }catch (Exception e){
             e.printStackTrace();
         }
 
 
+
+
+
+
     }
+
+
+
+    private void f()throws MyLogException2{
+        try{
+            g();
+        }catch (MyLogException1 exception1){
+            throw new MyLogException2(12);
+        }
+    }
+
+    private void g() throws MyLogException1{
+        throw new MyLogException1("MyLogException1");
+    }
+
+
+
 
     private void throwFun() throws MyException{
         throw new MyException("my Exception");
