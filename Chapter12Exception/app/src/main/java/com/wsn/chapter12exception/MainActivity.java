@@ -239,17 +239,42 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.25
-        ClassA c = new ClassC();
-        try {
-            c.throwSomething();
-        } catch (BottomLevelException e) {
-            e.printStackTrace();
-        } catch (MidLevelException e) {
-            e.printStackTrace();
-        } catch (TopLevelException e) {
-            e.printStackTrace();
-        }
+//        ClassA c = new ClassC();
+//        try {
+//            c.throwSomething();
+//        } catch (BottomLevelException e) {
+//            e.printStackTrace();
+//        } catch (MidLevelException e) {
+//            e.printStackTrace();
+//        } catch (TopLevelException e) {
+//            e.printStackTrace();
+//        }
 
+        //practice12.26
+//        Exception in thread "main" java.io.FileNotFoundException: MainException.java (系统找不到指定的文件。)
+//        at java.io.FileInputStream.open0(Native Method)
+//        at java.io.FileInputStream.open(FileInputStream.java:195)
+//        at java.io.FileInputStream.<init>(FileInputStream.java:138)
+//        at java.io.FileInputStream.<init>(FileInputStream.java:93)
+//        at com.wsn.chapter12exception.MainException.main(MainException.java:10)
+//        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+//        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+//        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+//        at java.lang.reflect.Method.invoke(Method.java:498)
+//        at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147)
+
+        //practice12.27
+//        String array[] = new String[2];
+//        try{
+//            String str = array[2];
+//        }catch (ArrayIndexOutOfBoundsException e){
+//            throw new RuntimeException(e);
+//        }
+
+        //practice12.28
+//        throw new MyException1("message");
+
+        //practice12.29
 
 
     }
@@ -431,6 +456,18 @@ class ClassC extends ClassB{
 class MyException extends Exception{
     String str;
     MyException(String string){
+        super(string);
+        str = string;
+    }
+
+    public void showStr(){
+        Log.d("MyException", str);
+    }
+}
+
+class MyException1 extends RuntimeException{
+    String str;
+    MyException1(String string){
         super(string);
         str = string;
     }
