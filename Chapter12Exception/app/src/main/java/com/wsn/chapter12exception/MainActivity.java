@@ -275,7 +275,11 @@ public class MainActivity extends AppCompatActivity {
 //        throw new MyException1("message");
 
         //practice12.29
+        StormyInning29 si = new StormyInning29();
+        si.atBat();
 
+        Inning29 i = new StormyInning29();
+        i.atBat();
 
     }
 
