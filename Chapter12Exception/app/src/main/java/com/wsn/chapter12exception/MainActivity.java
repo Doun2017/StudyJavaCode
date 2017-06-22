@@ -156,42 +156,84 @@ public class MainActivity extends AppCompatActivity {
 //        f19_2();
 
         //practice12.20
-        try {
-            StormyInning si = new StormyInning();
-//            si.atBat();
-            si.addFunc();
-//            si.event();
-        } catch (PopFoul e) {
-            System.out.println("Pop foul");
-        } catch (RainedOut e) {
-            System.out.println("Rained out");
-        } catch (BaseballException e) {
-            System.out.println("Generic baseball exception");
-        } catch (UmpireArgument e){
-            System.out.println("StormyInning  UmpireArgument exception");
-        }
+//        try {
+//            StormyInning si = new StormyInning();
+////            si.atBat();
+//            si.addFunc();
+////            si.event();
+//        } catch (PopFoul e) {
+//            System.out.println("Pop foul");
+//        } catch (RainedOut e) {
+//            System.out.println("Rained out");
+//        } catch (BaseballException e) {
+//            System.out.println("Generic baseball exception");
+//        } catch (UmpireArgument e){
+//            System.out.println("StormyInning  UmpireArgument exception");
+//        }
+//
+//        // Strike not thrown in derived version.
+//        try {
+//            // What happens if you upcast?
+//            Inning i = new StormyInning();
+////            i.atBat();
+////            i.event();
+//
+//            i.addFunc();
+//
+//            // You must catch the exceptions from the
+//            // base-class version of the method:
+//        } catch (Strike e) {
+//            System.out.println("Strike");
+//        } catch (Foul e) {
+//            System.out.println("Foul");
+//        } catch (RainedOut e) {
+//            System.out.println("Rained out");
+//        } catch (BaseballException e) {
+//            System.out.println("Generic baseball exception");
+//        }catch (UmpireArgument e){
+//            System.out.println("Inning  UmpireArgument exception");
+//        }
 
-        // Strike not thrown in derived version.
-        try {
-            // What happens if you upcast?
-            Inning i = new StormyInning();
-//            i.atBat();
-//            i.event();
+        //practice12.21
+        //因为派生类构造器必须要抛出基类构造器声明所抛出的异常，所以派生类构造器永远无法捕获此异常
 
-            i.addFunc();
+        //practice12.22
+//        for (int i=0;i<5;i++){
+//            try{
+//                FailingConstructor failingConstructor = new FailingConstructor(i);
+//                try{
+//                    failingConstructor.doSomething();
+//                }catch (Exception e){
+//                    e.printStackTrace();
+//                }finally {
+//                    failingConstructor.dispose();
+//                }
+//            }catch (Exception e){
+//                Log.e("MainActivity", " practice12.22 "+i);
+//                e.printStackTrace();
+//            }
+//        }
 
-            // You must catch the exceptions from the
-            // base-class version of the method:
-        } catch (Strike e) {
-            System.out.println("Strike");
-        } catch (Foul e) {
-            System.out.println("Foul");
-        } catch (RainedOut e) {
-            System.out.println("Rained out");
-        } catch (BaseballException e) {
-            System.out.println("Generic baseball exception");
-        }catch (UmpireArgument e){
-            System.out.println("Inning  UmpireArgument exception");
+        //practice12.23 24
+        for (int i=0;i<5;i++){
+            for (int j=4;j>=0;j--) {
+                try {
+                    FailingConstructor1 failingConstructor1 = new FailingConstructor1(i, j);
+                    try {
+                        failingConstructor1.doSomething();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        failingConstructor1.dispose();
+                    }
+                } catch (FirstException e) {
+                    Log.e("MainActivity", " practice12.23  FirstException  " + i + "  " + j);
+                    e.printStackTrace();
+                } catch (SecondException e) {
+                    Log.e("MainActivity", " practice12.23  SecondException  " + i + "  " + j);
+                    e.printStackTrace();
+                }
+            }
         }
 
 
