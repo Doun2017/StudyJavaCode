@@ -215,27 +215,40 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice12.23 24
-        for (int i=0;i<5;i++){
-            for (int j=4;j>=0;j--) {
-                try {
-                    FailingConstructor1 failingConstructor1 = new FailingConstructor1(i, j);
-                    try {
-                        failingConstructor1.doSomething();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    } finally {
-                        failingConstructor1.dispose();
-                    }
-                } catch (FirstException e) {
-                    Log.e("MainActivity", " practice12.23  FirstException  " + i + "  " + j);
-                    e.printStackTrace();
-                } catch (SecondException e) {
-                    Log.e("MainActivity", " practice12.23  SecondException  " + i + "  " + j);
-                    e.printStackTrace();
-                }
-            }
-        }
+//        for (int i=0;i<5;i++){
+//            for (int j=4;j>=0;j--) {
+//                try {
+//                    FailingConstructor1 failingConstructor1 = new FailingConstructor1(i, j);
+//                    try {
+//                        failingConstructor1.doSomething();
+//                    } catch (Exception e) {
+//                        e.printStackTrace();
+//                    } finally {
+//                        failingConstructor1.dispose();
+//                    }
+//                } catch (FirstException e) {
+//                    Log.e("MainActivity", " practice12.23  FirstException  " + i + "  " + j);
+//                    e.printStackTrace();
+//                } catch (SecondException e) {
+//                    Log.e("MainActivity", " practice12.23  SecondException  " + i + "  " + j);
+//                    e.printStackTrace();
+//                }finally {
+//                    //nothing to do
+//                }
+//            }
+//        }
 
+        //practice12.25
+        ClassA c = new ClassC();
+        try {
+            c.throwSomething();
+        } catch (BottomLevelException e) {
+            e.printStackTrace();
+        } catch (MidLevelException e) {
+            e.printStackTrace();
+        } catch (TopLevelException e) {
+            e.printStackTrace();
+        }
 
 
 
@@ -389,6 +402,28 @@ public class MainActivity extends AppCompatActivity {
         return;
     }
 
+}
+
+
+
+class TopLevelException extends Exception{}
+class MidLevelException extends TopLevelException{}
+class BottomLevelException extends MidLevelException{}
+class ClassA{
+    void throwSomething() throws TopLevelException{
+        throw new TopLevelException();
+    }
+}
+class ClassB extends ClassA{
+    void throwSomething() throws MidLevelException{
+        throw new MidLevelException();
+    }
+}
+
+class ClassC extends ClassB{
+    void throwSomething() throws BottomLevelException{
+        throw new BottomLevelException();
+    }
 }
 
 
