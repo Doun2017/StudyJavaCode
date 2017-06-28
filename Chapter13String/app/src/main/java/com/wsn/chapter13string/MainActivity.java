@@ -2,6 +2,7 @@ package com.wsn.chapter13string;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = "MainActivity";
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         //toString中没有使用循环，所以编译器默认只生成一个StringBuild对象。
 
 
+        //practice13.2
+        Log.i(TAG, new InfiniteRecursion().toString());
 
 
     }
