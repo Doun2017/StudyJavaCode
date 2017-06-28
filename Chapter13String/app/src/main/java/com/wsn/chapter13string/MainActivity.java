@@ -29,8 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         //practice13.3 见Turtle.java
 
-        //practice13.4
-        System.out.println(String.format("%2$08d", -3123,-5566));
+        //practice13.4 Receipt.java
 
     }
 }
