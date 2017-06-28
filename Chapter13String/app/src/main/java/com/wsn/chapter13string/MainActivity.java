@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice13.2
-        Log.i(TAG, new InfiniteRecursion().toString());
+//        Log.i(TAG, new InfiniteRecursion().toString());
+
+        //practice13.3 见Turtle.java
 
 
     }
