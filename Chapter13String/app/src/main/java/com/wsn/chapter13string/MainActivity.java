@@ -55,8 +55,10 @@ public class MainActivity extends AppCompatActivity {
         for (String str:strsToMatch){
             Log.d(TAG, str);
         }
-        //practice13.9
 
+        //practice13.9
+        Log.e(TAG, knights);
+        Log.e(TAG, knights.replaceAll("[aeiou]", "_"));
 
 
     }
