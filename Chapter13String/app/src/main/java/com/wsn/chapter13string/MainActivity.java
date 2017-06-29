@@ -62,23 +62,33 @@ public class MainActivity extends AppCompatActivity {
 //        Log.e(TAG, knights.replaceAll("[aeiou]", "_"));
 
         //practice13.10
-        String staStr = "Java now has regular expressions";
-        String regularStr[] = new String[]{"^Java", "\\Breg.*", "n.w\\s+h(a|i)s",
-                "s?", "s*", "s+",
-                "s{4}", "s{1}", "s{0,3}"};
-        for (String str : regularStr) {
-            //Log.d(TAG, str);
-            //Log.d(TAG, "match result::"+staStr.matches(str));
+//        String staStr = "Java now has regular expressions";
+//        String regularStr[] = new String[]{"^Java", "\\Breg.*", "n.w\\s+h(a|i)s",
+//                "s?", "s*", "s+",
+//                "s{4}", "s{1}", "s{0,3}"};
+//        for (String str : regularStr) {
+//            //Log.d(TAG, str);
+//            //Log.d(TAG, "match result::"+staStr.matches(str));
+//
+//            Log.d(TAG, "Regular expression: \"" + str + "\"");
+//            Pattern p = Pattern.compile(str);
+//            Matcher m = p.matcher(staStr);
+//            while(m.find()) {
+//                Log.d(TAG, "Match \"" + m.group() +
+//                        "\" at positions " + m.start() + "-" +
+//                        (m.end() - 1));
+//            }
+//        }
 
-            Log.d(TAG, "Regular expression: \"" + str + "\"");
-            Pattern p = Pattern.compile(str);
-            Matcher m = p.matcher(staStr);
-            while(m.find()) {
-                Log.d(TAG, "Match \"" + m.group() +
-                        "\" at positions " + m.start() + "-" +
-                        (m.end() - 1));
-            }
+        //practice13.11
+        Pattern p = Pattern.compile("(?i)((^[aeiou])|(\\s+[aeiou]))\\w+?[aeiou]\\b");
+        Matcher m = p.matcher("Arline ate eight apples and one orange while Anita hadn't any");
+        while(m.find()) {
+            Log.d(TAG, "Match \"" + m.group() +
+                    "\" at positions " + m.start() + "-" +
+                    (m.end() - 1));
         }
+
 
     }
 
