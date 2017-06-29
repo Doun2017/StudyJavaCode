@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
@@ -40,15 +42,20 @@ public class MainActivity extends AppCompatActivity {
 //        Log.d(TAG, myFormatClass.toString());
 
         //practice13.7
-        String strsToMatch[] = new String[]{"fdjasi", "Afdsfff", "Efjdis."};
-        for (String str:strsToMatch){
-            Log.d(TAG, "match result::"+matchMyPattern(str));
-        }
+//        String strsToMatch[] = new String[]{"fdjasi", "Afdsfff", "Efjdis."};
+//        for (String str:strsToMatch){
+//            Log.d(TAG, "match result::"+matchMyPattern(str));
+//        }
 
-        String knights =
-                "Then, when you have found the shrubbery, you must " +
+        //practice13.8
+        String knights = "Then, when you have found the shrubbery, you must " +
                         "cut down the mightiest tree in the forest... " +
                         "with... a herring!";
+        String strsToMatch[] = knights.split("the|you");
+        for (String str:strsToMatch){
+            Log.d(TAG, str);
+        }
+
 
 
     }
