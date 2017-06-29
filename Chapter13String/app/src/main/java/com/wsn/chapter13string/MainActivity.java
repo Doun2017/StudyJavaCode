@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.regex.Pattern;
+
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = "MainActivity";
 
@@ -34,9 +36,25 @@ public class MainActivity extends AppCompatActivity {
         //practice13.5 略
 
         //practice13.6
-        MyFormatClass myFormatClass = new MyFormatClass();
-        Log.d(TAG, myFormatClass.toString());
+//        MyFormatClass myFormatClass = new MyFormatClass();
+//        Log.d(TAG, myFormatClass.toString());
 
+        //practice13.7
+        String strsToMatch[] = new String[]{"fdjasi", "Afdsfff", "Efjdis."};
+        for (String str:strsToMatch){
+            Log.d(TAG, "match result::"+matchMyPattern(str));
+        }
+
+        String knights =
+                "Then, when you have found the shrubbery, you must " +
+                        "cut down the mightiest tree in the forest... " +
+                        "with... a herring!";
+
+
+    }
+
+    boolean matchMyPattern(String str){
+        return str.matches("[A-Z].*\\.");
     }
 }
 
