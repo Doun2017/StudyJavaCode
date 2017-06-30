@@ -100,18 +100,36 @@ public class MainActivity extends AppCompatActivity {
                         "The jaws that bite, the claws that catch.\n" +
                         "Beware the Jubjub bird, and shun\n" +
                         "The frumious Bandersnatch.";
-//        Matcher m = Pattern.compile("(\\b[a-z][a-zA-Z]+\\b)").matcher(POEM);//我的答案
-        Matcher m = Pattern.compile("\\b((?![A-Z])\\w+)\\b").matcher(POEM);//标准答案  (?![A-Z])非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用
-        Set<String> stringSet = new HashSet<>();
-        while(m.find()) {
-            String groupStr = "";
-            for(int j = 0; j <= m.groupCount(); j++) {
-                groupStr += "[" + m.group(j) + "]";
-                stringSet.add(m.group(j));
-            }
-            Log.d("match", groupStr);
-        }
-        Log.d("match", "sum = " + stringSet.size() + stringSet.toString());
+////        Matcher m = Pattern.compile("(\\b[a-z][a-zA-Z]+\\b)").matcher(POEM);//我的答案
+//        Matcher m = Pattern.compile("\\b((?![A-Z])\\w+)\\b").matcher(POEM);//标准答案  (?![A-Z])非获取匹配，正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串，该匹配不需要获取供以后使用
+//        Set<String> stringSet = new HashSet<>();
+//        while(m.find()) {
+//            String groupStr = "";
+//            for(int j = 0; j <= m.groupCount(); j++) {
+//                groupStr += "[" + m.group(j) + "]";
+//                stringSet.add(m.group(j));
+//            }
+//            Log.d("match", groupStr);
+//        }
+//        Log.d("match", "sum = " + stringSet.size() + stringSet.toString());
+
+        //practice13.13
+//        for (String in : POEM.split("\n")) {
+//            Log.d("StartEnd", "input : " + in);
+//            for (String regex : new String[]{"\\w*ere\\w*",
+//                    "\\w*ever", "T\\w+", "Never.*?!"})
+//                StartEnd.examine(in, regex);
+//        }
+
+        //practice13.14
+        String input = "This!!unusual use!!of exclamation!!points";
+        Log.d(TAG, Arrays.toString(input.split("!!")));
+        // Only do the first three:
+        Log.d(TAG, Arrays.toString(input.split("!!", 3)));
+
+
+
+
 
     }
 
