@@ -7,6 +7,7 @@ import android.util.Log;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -122,13 +123,24 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice13.14
-        String input = "This!!unusual use!!of exclamation!!points";
-        Log.d(TAG, Arrays.toString(input.split("!!")));
-        // Only do the first three:
-        Log.d(TAG, Arrays.toString(input.split("!!", 3)));
+//        String input = "This!!unusual use!!of exclamation!!points";
+//        Log.d(TAG, Arrays.toString(input.split("!!")));
+//        // Only do the first three:
+//        Log.d(TAG, Arrays.toString(input.split("!!", 3)));
 
+        //practice13.15 16 17 18 19 略
 
-
+        //practice13.20
+        String input = "123\n222\n345.333\n123.334\naaaaaaaaaaaaaaaaaaaaaaaaa";
+        Scanner stdin = new Scanner(input);
+        MyScanerClass myScanerClass = new MyScanerClass();
+        Log.d(TAG, myScanerClass.toString());
+        myScanerClass.setAnInt(stdin.nextInt());
+        myScanerClass.setaLong(stdin.nextLong());
+        myScanerClass.setaFloat(stdin.nextFloat());
+        myScanerClass.setaDouble(stdin.nextDouble());
+        myScanerClass.setaString(stdin.next());
+        Log.d(TAG, myScanerClass.toString());
 
 
     }
@@ -157,5 +169,51 @@ class MyFormatClass {
                 ", aLong=%9d" +
                 ", aFloat=%9.5f" +
                 ", aDouble=%9.5f" + '}', anInt, aLong, aFloat, aDouble);
+    }
+}
+
+
+class MyScanerClass {
+    private int anInt = 2;
+    private long aLong = 22;
+    private float aFloat = 22.33f;
+    private double aDouble = 3333.133d;
+    private String aString = "fdsfdfssdfds";
+
+    public void setAnInt(int anInt) {
+        this.anInt = anInt;
+    }
+
+    public void setaLong(long aLong) {
+        this.aLong = aLong;
+    }
+
+    public void setaFloat(float aFloat) {
+        this.aFloat = aFloat;
+    }
+
+    public void setaDouble(double aDouble) {
+        this.aDouble = aDouble;
+    }
+
+    public void setaString(String aString) {
+        this.aString = aString;
+    }
+
+    @Override
+
+    public String toString() {
+//        return "MyFormatClass{" +
+//                "anInt=" + anInt +
+//                ", aLong=" + aLong +
+//                ", aFloat=" + aFloat +
+//                ", aDouble=" + aDouble +
+//                '}';
+        return String.format("MyFormatClass{" +
+                "anInt=%9d" +
+                ", aLong=%9d" +
+                ", aFloat=%9.5f" +
+                ", aDouble=%9.5f" +
+                ", aString=%s" + '}', anInt, aLong, aFloat, aDouble, aString);
     }
 }
