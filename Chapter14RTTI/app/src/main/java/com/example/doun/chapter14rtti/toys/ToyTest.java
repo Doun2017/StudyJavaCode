@@ -6,6 +6,7 @@ package com.example.doun.chapter14rtti.toys;
 interface HasBatteries {}
 interface Waterproof {}
 interface Shoots {}
+interface MyInterface {}
 
 class Toy {
   // Comment out the following default constructor
@@ -15,7 +16,7 @@ class Toy {
 }
 
 class FancyToy extends Toy
-        implements HasBatteries, Waterproof, Shoots {
+        implements HasBatteries, Waterproof, Shoots, MyInterface {
   FancyToy() { super(1); }
 }
 
