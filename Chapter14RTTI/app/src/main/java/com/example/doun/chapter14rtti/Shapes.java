@@ -7,6 +7,9 @@ abstract class Shape {
     void draw() {
         System.out.println(this + ".draw()");
     }
+    void rotate() {
+        System.out.println(this + ".rotate()");
+    }
 
     abstract public String toString();
 }

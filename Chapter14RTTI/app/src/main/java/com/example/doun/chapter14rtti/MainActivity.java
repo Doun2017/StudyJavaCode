@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = "MainActivity";
 
@@ -32,26 +35,38 @@ public class MainActivity extends AppCompatActivity {
 //        //Log.d(TAG, triangle.toString());
 
         //practice14.4
-        Rhomboid rhomboid = new Rhomboid();
-        Log.d(TAG, rhomboid.toString());
-        Shape shape = rhomboid;
-        Log.d(TAG, shape.toString());
-        if (shape instanceof Rhomboid){
-            Rhomboid rhomboid1 = (Rhomboid) shape;
-            Log.d(TAG, rhomboid1.toString());
+//        Rhomboid rhomboid = new Rhomboid();
+//        Log.d(TAG, rhomboid.toString());
+//        Shape shape = rhomboid;
+//        Log.d(TAG, shape.toString());
+//        if (shape instanceof Rhomboid){
+//            Rhomboid rhomboid1 = (Rhomboid) shape;
+//            Log.d(TAG, rhomboid1.toString());
+//        }
+//        if (shape instanceof Triangle) {
+//            Triangle triangle = (Triangle) shape;
+//            Log.d(TAG, triangle.toString());
+//        }
+
+
+        //practice14.5
+        List<Shape> shapeList = Arrays.asList(new Circle(), new Rhomboid(), new Square(), new Triangle());
+        for (Shape shape : shapeList){
+            rotate(shape);
         }
-        if (shape instanceof Triangle) {
-            Triangle triangle = (Triangle) shape;
-            Log.d(TAG, triangle.toString());
+
+
+
+
+
+
+    }
+
+    void rotate(Shape shape){
+        if (shape instanceof Circle) {
+            return;
+        }else {
+            shape.rotate();
         }
-
-
-
-
-
-
-
-
-
     }
 }
