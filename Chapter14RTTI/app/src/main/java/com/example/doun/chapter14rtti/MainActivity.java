@@ -68,7 +68,27 @@ public class MainActivity extends AppCompatActivity {
         //practice14.8 14.9
 //        clan(new Circle());
 //        clan(new String());
-        clan(this);
+//        clan(this);
+
+
+        //practice14.10
+        char[] chars = new char[5];
+        System.out.println("Class name: " + chars.getClass().getName());//证明chars是一个对象
+//        System.out.println("Class name: " + chars.class.getName());//证明chars不是一种类型
+//        System.out.println("Class name: " + chars[0].getClass().getName());//证明chars的元素是基本类型
+        System.out.println("Class name: " + (new String[5]).getClass().getName());
+        System.out.println("Class name: " + (new boolean[5]).getClass().getName());
+        System.out.println("Class name: " + (new char[5]).getClass().getName());
+        System.out.println("Class name: " + (new byte[5]).getClass().getName());
+        System.out.println("Class name: " + (new short[5]).getClass().getName());
+        System.out.println("Class name: " + (new int[5]).getClass().getName());
+        System.out.println("Class name: " + (new long[5]).getClass().getName());
+        System.out.println("Class name: " + (new long[5]).getClass().getCanonicalName());
+        System.out.println("Class name: " + (new long[5]).getClass().getSimpleName());
+        System.out.println("Class name: " + (new float[5]).getClass().getName());
+        System.out.println("Class name: " + (new double[5]).getClass().getName());
+
+
 
 
 
