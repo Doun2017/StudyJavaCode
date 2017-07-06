@@ -50,17 +50,32 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice14.5
-        List<Shape> shapeList = Arrays.asList(new Circle(), new Rhomboid(), new Square(), new Triangle());
-        for (Shape shape : shapeList){
-            rotate(shape);
-        }
+//        List<Shape> shapeList = Arrays.asList(new Circle(), new Rhomboid(), new Square(), new Triangle());
+//        for (Shape shape : shapeList){
+//            rotate(shape);
+//        }
 
         //practice14.6 见Shapes
 
+        //practice14.7
+        String args[] = new String[]{"com.example.doun.chapter14rtti.Gum",
+                "com.example.doun.chapter14rtti.Candy",
+                "com.example.doun.chapter14rtti.Gum",
+                "com.example.doun.chapter14rtti.Cookie"};
+        SweetShopFunc(args);
 
 
 
 
+    }
+
+    public static void SweetShopFunc(String[] args) {
+        for (String str:args)
+            try {
+                Class.forName(str);
+            } catch(ClassNotFoundException e) {
+                System.out.println("Couldn't find "+str);
+            }
     }
 
     void rotate(Shape shape){
