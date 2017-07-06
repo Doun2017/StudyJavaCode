@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.doun.chapter14rtti.coffee.Coffee;
+import com.example.doun.chapter14rtti.coffee.CoffeeGenerator;
+
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
@@ -91,7 +94,17 @@ public class MainActivity extends AppCompatActivity {
 
         //practice14.11 见pets包
 
-
+        //practice14.12
+        TypeCounter counter = new TypeCounter(Coffee.class);
+        CoffeeGenerator gen = new CoffeeGenerator();
+        Coffee coffee=null;
+        for (int i = 0; i < 20; i++){
+            coffee = gen.next();
+            System.out.println(coffee.getClass().getSimpleName() + " ");
+            counter.count(coffee);
+        }
+        System.out.println();
+        System.out.println(counter);
 
 
     }
