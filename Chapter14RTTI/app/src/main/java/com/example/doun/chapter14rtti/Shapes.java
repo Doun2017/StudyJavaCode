@@ -4,6 +4,7 @@ package com.example.doun.chapter14rtti;
 import java.util.*;
 
 abstract class Shape {
+    boolean signal=false;
     void draw() {
         System.out.println(this + ".draw()");
     }
@@ -15,26 +16,30 @@ abstract class Shape {
 }
 
 class Circle extends Shape {
+    public Circle() {
+        signal = true;
+    }
     public String toString() {
-        return "Circle";
+        return "Circle signal = "+signal;
     }
 }
 
 class Square extends Shape {
     public String toString() {
-        return "Square";
+        return "Square signal = "+signal;
     }
 }
 
 class Triangle extends Shape {
     public String toString() {
-        return "Triangle";
+        return "Triangle signal = "+signal;
     }
 }
 
 class Rhomboid extends Shape {
     public String toString() {
-        return "Rhomboid";
+        signal = true;
+        return "Rhomboid signal = "+signal;
     }
 }
 

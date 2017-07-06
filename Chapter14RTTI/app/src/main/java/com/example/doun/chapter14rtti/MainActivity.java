@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             rotate(shape);
         }
 
+        //practice14.6 见Shapes
 
 
 
