@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,15 +59,44 @@ public class MainActivity extends AppCompatActivity {
         //practice14.6 见Shapes
 
         //practice14.7
-        String args[] = new String[]{"com.example.doun.chapter14rtti.Gum",
-                "com.example.doun.chapter14rtti.Candy",
-                "com.example.doun.chapter14rtti.Gum",
-                "com.example.doun.chapter14rtti.Cookie"};
-        SweetShopFunc(args);
+//        String args[] = new String[]{"com.example.doun.chapter14rtti.Gum",
+//                "com.example.doun.chapter14rtti.Candy",
+//                "com.example.doun.chapter14rtti.Gum",
+//                "com.example.doun.chapter14rtti.Cookie"};
+//        SweetShopFunc(args);
+
+        //practice14.8 14.9
+//        clan(new Circle());
+//        clan(new String());
+        clan(this);
 
 
 
+    }
 
+    public static void printInfo(Class cc) {
+        System.out.println("Class name: " + cc.getName() + " is interface? [" + cc.isInterface() + "]");
+        System.out.println("Simple name: " + cc.getSimpleName());
+        System.out.println("Canonical name : " + cc.getCanonicalName());
+        printFields(cc);
+    }
+    public static void printFields(Class cc) {
+        Field fields[] = cc.getDeclaredFields();
+        for (Field f:fields){
+            System.out.println("Field: " + f.getName());
+        }
+    }
+    public static void clan(Object o) {
+        Class c = o.getClass();
+        while (c != null){
+            printInfo(c);
+            for(Class face : c.getInterfaces())
+                printInfo(face);
+            Class up = c.getSuperclass();
+            c = up;
+            if (c!=null)
+                System.out.println("-----------------superclass:"+c.getSimpleName());
+        }
     }
 
     public static void SweetShopFunc(String[] args) {
