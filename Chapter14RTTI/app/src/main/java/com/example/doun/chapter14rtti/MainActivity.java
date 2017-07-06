@@ -107,14 +107,24 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println(counter);
 
         //practice14.13
-        TypeCounter counter = new TypeCounter(Part.class);
-        for (int i = 0; i < 20; i++){
-            Part part = Part.createRandom();
-            System.out.println(part.getClass().getSimpleName() + " ");
-            counter.count(part);
-        }
-        System.out.println();
-        System.out.println(counter);
+//        TypeCounter counter = new TypeCounter(Part.class);
+//        for (int i = 0; i < 20; i++){
+//            Part part = Part.createRandom();
+//            System.out.println(part.getClass().getSimpleName() + " ");
+//            counter.count(part);
+//        }
+//        System.out.println();
+//        System.out.println(counter);
+
+        //practice14.14 see RegisteredFactories.java
+
+
+
+
+
+
+
+
 
     }
 

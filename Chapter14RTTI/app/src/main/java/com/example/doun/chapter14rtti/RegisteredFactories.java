@@ -25,12 +25,35 @@ class Part {
         partFactories.add(new PowerSteeringBelt.MyFactory());
         partFactories.add(new GeneratorBelt.MyFactory());
     }
+    static List<Class> partClasses =
+            new ArrayList<Class>();
 
+    static {
+        // Collections.addAll() gives an "unchecked generic
+        // array creation ... for varargs parameter" warning.
+        partClasses.add(FuelFilter.class);
+        partClasses.add(AirFilter.class);
+        partClasses.add(CabinAirFilter.class);
+        partClasses.add(OilFilter.class);
+        partClasses.add(FanBelt.class);
+        partClasses.add(PowerSteeringBelt.class);
+        partClasses.add(GeneratorBelt.class);
+    }
     private static Random rand = new Random(47);
 
     public static Part createRandom() {
         int n = rand.nextInt(partFactories.size());
         return partFactories.get(n).create();
+    }
+    public static Part createRandom1() {
+        int n = rand.nextInt(partFactories.size());
+        try {
+            return (Part) partClasses.get(n).newInstance();
+        } catch(InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch(IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
@@ -39,8 +62,7 @@ class Filter extends Part {
 
 class FuelFilter extends Filter {
     // Create a class MyFactory for each specific type:
-    public static class MyFactory
-            implements Factory<FuelFilter> {
+    public static class MyFactory implements Factory<FuelFilter> {
         public FuelFilter create() {
             return new FuelFilter();
         }
@@ -106,7 +128,8 @@ class PowerSteeringBelt extends Belt {
 public class RegisteredFactories {
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++)
-            System.out.println(Part.createRandom());
+            System.out.println(Part.createRandom1());
+//            System.out.println(Part.createRandom());
     }
 } /* Output:
 GeneratorBelt
