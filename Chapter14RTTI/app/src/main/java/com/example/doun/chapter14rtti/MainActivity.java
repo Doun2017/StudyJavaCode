@@ -95,17 +95,26 @@ public class MainActivity extends AppCompatActivity {
         //practice14.11 见pets包
 
         //practice14.12
-        TypeCounter counter = new TypeCounter(Coffee.class);
-        CoffeeGenerator gen = new CoffeeGenerator();
-        Coffee coffee=null;
+//        TypeCounter counter = new TypeCounter(Coffee.class);
+//        CoffeeGenerator gen = new CoffeeGenerator();
+//        Coffee coffee=null;
+//        for (int i = 0; i < 20; i++){
+//            coffee = gen.next();
+//            System.out.println(coffee.getClass().getSimpleName() + " ");
+//            counter.count(coffee);
+//        }
+//        System.out.println();
+//        System.out.println(counter);
+
+        //practice14.13
+        TypeCounter counter = new TypeCounter(Part.class);
         for (int i = 0; i < 20; i++){
-            coffee = gen.next();
-            System.out.println(coffee.getClass().getSimpleName() + " ");
-            counter.count(coffee);
+            Part part = Part.createRandom();
+            System.out.println(part.getClass().getSimpleName() + " ");
+            counter.count(part);
         }
         System.out.println();
         System.out.println(counter);
-
 
     }
 
