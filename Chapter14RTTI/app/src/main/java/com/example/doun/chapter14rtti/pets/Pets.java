@@ -8,15 +8,22 @@ public class Pets {
     public static final PetCreator creator =
             new LiteralPetCreator();
 
+    public static final PetCreator factoryCreator =
+            new FactoryPetCreator();
+
+
     public static Pet randomPet() {
-        return creator.randomPet();
+        return factoryCreator.randomPet();
+//        return creator.randomPet();
     }
 
     public static Pet[] createArray(int size) {
-        return creator.createArray(size);
+        return factoryCreator.createArray(size);
+//        return creator.createArray(size);
     }
 
     public static ArrayList<Pet> arrayList(int size) {
-        return creator.arrayList(size);
+        return factoryCreator.arrayList(size);
+//        return creator.arrayList(size);
     }
 } ///:~

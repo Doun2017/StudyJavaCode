@@ -119,6 +119,8 @@ public class MainActivity extends AppCompatActivity {
 
         //practice14.14 see RegisteredFactories.java
 
+        //practice14.15 see pets.FactoryPetCreator.java。用PetCount4检验。
+
 
 
 
