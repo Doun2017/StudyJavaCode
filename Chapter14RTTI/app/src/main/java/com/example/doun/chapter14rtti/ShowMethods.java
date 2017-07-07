@@ -8,7 +8,7 @@ import java.lang.reflect.*;
 import java.util.regex.*;
 //import static net.mindview.util.System.out.println.*;
 
-public class ShowMethods {
+class ShowMethods {
     private static String usage =
             "usage:\n" +
                     "ShowMethods qualified.class.name\n" +
