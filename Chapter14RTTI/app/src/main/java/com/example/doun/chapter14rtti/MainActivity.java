@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
 
         //practice14.21 see SimpleProxyDemo.java。
         //practice14.22 see SimpleDynamicProxy.java。
+        //practice14.23 见 SimpleDynamicProxy.java中的注释。
 
 
 
