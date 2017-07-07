@@ -127,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
 
         //practice14.18 see ShowMethods.java。
 
+        //practice14.19 see ToyTest.java。
+
 
 
 
