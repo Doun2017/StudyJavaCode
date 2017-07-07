@@ -129,6 +129,10 @@ public class MainActivity extends AppCompatActivity {
 
         //practice14.19 see ToyTest.java。
 
+        //practice14.20 略
+
+        //practice14.21 see SimpleProxyDemo.java。
+
 
 
 
