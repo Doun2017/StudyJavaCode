@@ -1,5 +1,6 @@
 package com.example.doun.chapter14rtti;
 
+import android.app.Instrumentation;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,10 +9,12 @@ import com.example.doun.chapter14rtti.coffee.Coffee;
 import com.example.doun.chapter14rtti.coffee.CoffeeGenerator;
 import com.example.doun.chapter14rtti.factory.Factory;
 import com.example.doun.chapter14rtti.factory.HiddenMyClass;
+import com.example.doun.chapter14rtti.music.*;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -141,16 +144,17 @@ public class MainActivity extends AppCompatActivity {
         //practice14.24 see RegisteredFactories.java
 
         //practice14.25
-        Factory<HiddenMyClass> hiddenMyClass = HiddenMyClass.makeFactory();
-        System.out.println(hiddenMyClass.getClass().getName());
-        try {
-            callHiddenMethod(hiddenMyClass, "myPrivateFun");
-            callHiddenMethod(hiddenMyClass, "myProtectedFun");
-            callHiddenMethod(hiddenMyClass, "myPublicFun");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        Factory<HiddenMyClass> hiddenMyClass = HiddenMyClass.makeFactory();
+//        System.out.println(hiddenMyClass.getClass().getName());
+//        try {
+//            callHiddenMethod(hiddenMyClass, "myPrivateFun");
+//            callHiddenMethod(hiddenMyClass, "myProtectedFun");
+//            callHiddenMethod(hiddenMyClass, "myPublicFun");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
+        //practice14.26 see Music2.java
 
 
 
