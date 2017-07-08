@@ -6,8 +6,11 @@ import android.util.Log;
 
 import com.example.doun.chapter14rtti.coffee.Coffee;
 import com.example.doun.chapter14rtti.coffee.CoffeeGenerator;
+import com.example.doun.chapter14rtti.factory.Factory;
+import com.example.doun.chapter14rtti.factory.HiddenMyClass;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.util.Arrays;
 import java.util.List;
@@ -137,6 +140,16 @@ public class MainActivity extends AppCompatActivity {
 
         //practice14.24 see RegisteredFactories.java
 
+        //practice14.25
+        Factory<HiddenMyClass> hiddenMyClass = HiddenMyClass.makeFactory();
+        System.out.println(hiddenMyClass.getClass().getName());
+        try {
+            callHiddenMethod(hiddenMyClass, "myPrivateFun");
+            callHiddenMethod(hiddenMyClass, "myProtectedFun");
+            callHiddenMethod(hiddenMyClass, "myPublicFun");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
 
@@ -146,6 +159,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+    static void callHiddenMethod(Object a, String methodName) throws Exception {
+        Method g = a.getClass().getDeclaredMethod(methodName);
+        g.setAccessible(true);
+        g.invoke(a);
     }
 
     public static void printInfo(Class cc) {
