@@ -135,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
         //practice14.22 see SimpleDynamicProxy.java。
         //practice14.23 见 SimpleDynamicProxy.java中的注释。
 
+        //practice14.24 see RegisteredFactories.java
+
 
 
 

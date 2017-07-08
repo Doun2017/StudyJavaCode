@@ -6,6 +6,8 @@ import com.example.doun.chapter14rtti.factory.Factory;
 
 import java.util.*;
 
+interface Null {} ///:~
+
 class Part {
     public String toString() {
         return getClass().getSimpleName();
@@ -55,6 +57,13 @@ class Part {
             throw new RuntimeException(e);
         }
     }
+
+    public static class NullPart extends Part implements Null {
+        private NullPart() { }
+        public String toString() { return "NullPart"; }
+    }
+    public static final Part NULL = new NullPart();
+
 }
 
 class Filter extends Part {
@@ -127,10 +136,13 @@ class PowerSteeringBelt extends Belt {
 
 public class RegisteredFactories {
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++){
             System.out.println(Part.createRandom1());
-            System.out.println(Arrays.toString(args));
 //            System.out.println(Part.createRandom());
+        }
+        System.out.println(Part.NULL);
+
+        System.out.println(Arrays.toString(args));
     }
 } /* Output:
 GeneratorBelt
