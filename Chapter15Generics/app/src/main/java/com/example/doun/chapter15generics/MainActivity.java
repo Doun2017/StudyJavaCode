@@ -31,18 +31,24 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println(k());
 
         //practice15.4
-        Sequence<String> sequence = new Sequence(10);
-        for (int i = 0; i < 10; i++)
-            sequence.add(Integer.toString(i));
-        Selector<String> selector = sequence.selector();
-        while (!selector.end()) {
-            System.out.print(selector.current() + " ");
-            Log.d(TAG, selector.current() + " ");
-            selector.next();
-        }
+//        Sequence<String> sequence = new Sequence(10);
+//        for (int i = 0; i < 10; i++)
+//            sequence.add(Integer.toString(i));
+//        Selector<String> selector = sequence.selector();
+//        while (!selector.end()) {
+//            System.out.print(selector.current() + " ");
+//            Log.d(TAG, selector.current() + " ");
+//            selector.next();
+//        }
 
         //practice15.5 LinkedStack.java
 
+        //practice15.6
+        RandomList<Integer> rs = new RandomList<>();
+        for (int i=0; i<20; i++)
+            rs.add(i);
+        for (int i = 0; i < 11; i++)
+            Log.d(TAG, rs.select() + " ");
 
 
 
