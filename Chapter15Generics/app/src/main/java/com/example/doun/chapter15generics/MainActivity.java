@@ -17,16 +17,26 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice15.1
-        Holder3<Pet> hTest = new Holder3<Pet>(new Dog());
-        System.out.println(hTest.get());
+//        Holder3<Pet> hTest = new Holder3<Pet>(new Dog());
+//        System.out.println(hTest.get());
 
         //practice15.2
-        Holder3Objs<Pet> h3 = new Holder3Objs<Pet>(new Pet(),new Pet(),new Pet());
-        System.out.println(h3.getA());
-        System.out.println(h3.getB());
-        System.out.println(h3.getC());
+//        Holder3Objs<Pet> h3 = new Holder3Objs<Pet>(new Pet(),new Pet(),new Pet());
+//        System.out.println(h3.getA());
+//        System.out.println(h3.getB());
+//        System.out.println(h3.getC());
 
+        //practice15.3
+        System.out.println(k());
 
 
     }
+
+
+    static SixTuple<String,String,String,Integer,Double,Float> k() {
+        return new SixTuple<String,String,String,Integer,Double,Float>(
+                "one","two", "hi", 47, 11.1, 2.656f);
+    }
+
+
 }
