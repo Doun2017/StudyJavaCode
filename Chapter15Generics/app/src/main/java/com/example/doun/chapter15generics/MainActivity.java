@@ -51,9 +51,15 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d(TAG, rs.select() + " ");
 
         //practice15.7
-        for (int i : new IterableFibonacci(18))
-            Log.d(TAG, i + " ");
+//        for (int i : new IterableFibonacci(18))
+//            Log.d(TAG, i + " ");
 
+        //practice15.8
+        StoryCharactersGenerator gen = new StoryCharactersGenerator();
+        for (int i = 0; i < 5; i++)
+            Log.d(TAG, gen.next()+"");
+        for (StoryCharacters c : new StoryCharactersGenerator(5))
+            Log.d(TAG, c+"");
 
 
 
