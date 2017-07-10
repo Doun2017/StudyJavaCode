@@ -44,12 +44,15 @@ public class MainActivity extends AppCompatActivity {
         //practice15.5 LinkedStack.java
 
         //practice15.6
-        RandomList<Integer> rs = new RandomList<>();
-        for (int i=0; i<20; i++)
-            rs.add(i);
-        for (int i = 0; i < 11; i++)
-            Log.d(TAG, rs.select() + " ");
+//        RandomList<Integer> rs = new RandomList<>();
+//        for (int i=0; i<20; i++)
+//            rs.add(i);
+//        for (int i = 0; i < 11; i++)
+//            Log.d(TAG, rs.select() + " ");
 
+        //practice15.7
+        for (int i : new IterableFibonacci(18))
+            Log.d(TAG, i + " ");
 
 
 
