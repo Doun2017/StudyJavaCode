@@ -6,11 +6,19 @@ public class GenericMethods {
         System.out.println(x.getClass().getName());
     }
 
-    public <T, A, B> void g(T x,A a,B b) {
+    public <T, A, B> void g(T x, A a,B b) {
         System.out.println("x---"+x.getClass().getName());
         System.out.println("a---"+a.getClass().getName());
         System.out.println("b---"+b.getClass().getName());
     }
+
+    public <T, A> void h(T x, A a, float f) {
+        System.out.println("x---"+x.getClass().getName());
+        System.out.println("a---"+a.getClass().getName());
+        System.out.println("b---"+f);
+    }
+
+
     public static void main(String[] args) {
         GenericMethods gm = new GenericMethods();
         gm.f("");

@@ -62,8 +62,12 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d(TAG, c+"");
 
         //practice15.9
+//        GenericMethods gm = new GenericMethods();
+//        gm.g("", 123, 4.33);
+
+        //practice15.10
         GenericMethods gm = new GenericMethods();
-        gm.g("", 123, 4.33);
+        gm.h("", 123, 4.33f);
 
 
 
