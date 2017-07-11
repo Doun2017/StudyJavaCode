@@ -8,12 +8,15 @@ import com.example.doun.chapter15generics.pets.Dog;
 import com.example.doun.chapter15generics.pets.Pet;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+
+import static com.example.doun.chapter15generics.Watercolors.*;
 
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = "MainActivity";
@@ -104,7 +107,33 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println(testTuple);
 
         //practice15.16
-        System.out.println(TupleTest2.l());
+//        System.out.println(TupleTest2.l());
+
+
+        //practice15.17  从习题答案抄来的
+        Set<Watercolors> set1 = EnumSet.range(BRILLIANT_RED, VIRIDIAN_HUE);
+        Set<Watercolors> set2 = EnumSet.range(CERULEAN_BLUE_HUE, BURNT_UMBER);
+        System.out.println("set1: " + set1);
+        System.out.println("set2: " + set2);
+        System.out.println("union(set1, set2): " + Sets.union(set1, set2));
+        System.out.println("union(set1, set2) type: " +
+                Sets.union(set1, set2).getClass().getSimpleName());
+        Set<Integer> set3 = new HashSet<Integer>();
+        set3.add(1);
+        Set<Integer> set4 = new HashSet<Integer>();
+        set4.add(2);
+        System.out.println("set3: " + set3);
+        System.out.println("set4: " + set4);
+        System.out.println("union(set3, set4): " + Sets.union(set3, set4));
+        System.out.println("union(set3, set4) type: " +
+                Sets.union(set3, set4).getClass().getSimpleName());
+        //输出：
+        //System.out: union(set1, set2) type: MiniEnumSet
+        //System.out: set3: [1]
+        //System.out: set4: [2]
+        //System.out: union(set3, set4): [1, 2]
+        //System.out: union(set3, set4) type: HashSet
+
 
 
 
