@@ -7,6 +7,12 @@ import android.util.Log;
 import com.example.doun.chapter15generics.pets.Dog;
 import com.example.doun.chapter15generics.pets.Pet;
 
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = "MainActivity";
 
@@ -66,12 +72,24 @@ public class MainActivity extends AppCompatActivity {
 //        gm.g("", 123, 4.33);
 
         //practice15.10
-        GenericMethods gm = new GenericMethods();
-        gm.h("", 123, 4.33f);
+//        GenericMethods gm = new GenericMethods();
+//        gm.h("", 123, 4.33f);
+
+        //practice15.11
+        Map<BadGays, List<String>> sls = New.map();
+        List<QingTianZhu> ls = New.list();
+        LinkedList<WeiZhenTian> lls = New.lList();
+        Set<StoryCharacters> ss = New.set();
+        Queue<DaHuangFeng> qs = New.queue();
+
+        //practice15.12
+        f(New.<QingTianZhu>list());
+
 
 
 
     }
+    void f(List<QingTianZhu> list){}
 
 
     static SixTuple<String,String,String,Integer,Double,Float> k() {
