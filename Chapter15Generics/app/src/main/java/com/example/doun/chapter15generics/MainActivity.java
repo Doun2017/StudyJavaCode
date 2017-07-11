@@ -55,12 +55,15 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d(TAG, i + " ");
 
         //practice15.8
-        StoryCharactersGenerator gen = new StoryCharactersGenerator();
-        for (int i = 0; i < 5; i++)
-            Log.d(TAG, gen.next()+"");
-        for (StoryCharacters c : new StoryCharactersGenerator(5))
-            Log.d(TAG, c+"");
+//        StoryCharactersGenerator gen = new StoryCharactersGenerator();
+//        for (int i = 0; i < 5; i++)
+//            Log.d(TAG, gen.next()+"");
+//        for (StoryCharacters c : new StoryCharactersGenerator(5))
+//            Log.d(TAG, c+"");
 
+        //practice15.9
+        GenericMethods gm = new GenericMethods();
+        gm.g("", 123, 4.33);
 
 
 
