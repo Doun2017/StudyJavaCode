@@ -7,6 +7,8 @@ import android.util.Log;
 import com.example.doun.chapter15generics.pets.Dog;
 import com.example.doun.chapter15generics.pets.Pet;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -76,19 +78,32 @@ public class MainActivity extends AppCompatActivity {
 //        gm.h("", 123, 4.33f);
 
         //practice15.11
-        Map<BadGays, List<String>> sls = New.map();
-        List<QingTianZhu> ls = New.list();
-        LinkedList<WeiZhenTian> lls = New.lList();
-        Set<StoryCharacters> ss = New.set();
-        Queue<DaHuangFeng> qs = New.queue();
+//        Map<BadGays, List<String>> sls = New.map();
+//        List<QingTianZhu> ls = New.list();
+//        LinkedList<WeiZhenTian> lls = New.lList();
+//        Set<StoryCharacters> ss = New.set();
+//        Queue<DaHuangFeng> qs = New.queue();
+//
+//        //practice15.12
+//        f(New.<QingTianZhu>list());
 
-        //practice15.12
-        f(New.<QingTianZhu>list());
+        //practice15.13
+//        ArrayList<Integer> fnumbers = Generators.fill(new ArrayList<Integer>(), new Fibonacci(), 12);
+//        for (int i : fnumbers)
+//            Log.d(TAG, "ArrayList"+i + ", ");
+//        Set<Integer> fSetNumbers = Generators.fill(new HashSet<Integer>(), new Fibonacci(), 12);
+//        for (int i : fSetNumbers)
+//            Log.d(TAG, i + ", ");
+
+        //practice15.14
+        for(int i = 0; i < 5; i++)
+            System.out.println(new CountedObject());
 
 
 
 
     }
+
     void f(List<QingTianZhu> list){}
 
 
@@ -99,3 +114,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
+class CountedObject {
+    private static long counter = 0;
+    private final long id = counter++;
+    public long id() { return id; }
+    public String toString() { return "CountedObject " + id;}
+} ///:~
