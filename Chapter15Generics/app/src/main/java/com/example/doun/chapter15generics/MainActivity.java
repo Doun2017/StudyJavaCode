@@ -96,9 +96,15 @@ public class MainActivity extends AppCompatActivity {
 //            Log.d(TAG, i + ", ");
 
         //practice15.14
-        for(int i = 0; i < 5; i++)
-            System.out.println(new CountedObject());
+//        for(int i = 0; i < 5; i++)
+//            System.out.println(new CountedObject());
 
+        //practice15.15 不属实
+//        TwoTuple<String, Integer> testTuple = (TwoTuple<String, Integer>)TupleTest2.f2();
+//        System.out.println(testTuple);
+
+        //practice15.16
+        System.out.println(TupleTest2.l());
 
 
 
