@@ -111,31 +111,34 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice15.17  关于set知之甚少，所以从习题答案抄来的
-        Set<Watercolors> set1 = EnumSet.range(BRILLIANT_RED, VIRIDIAN_HUE);
-        Set<Watercolors> set2 = EnumSet.range(CERULEAN_BLUE_HUE, BURNT_UMBER);
-        System.out.println("set1: " + set1);
-        System.out.println("set2: " + set2);
-        System.out.println("union(set1, set2): " + Sets.union(set1, set2));
-        System.out.println("union(set1, set2) type: " +
-                Sets.union(set1, set2).getClass().getSimpleName());
-        Set<Integer> set3 = new HashSet<Integer>();
-        set3.add(1);
-        Set<Integer> set4 = new HashSet<Integer>();
-        set4.add(2);
-        System.out.println("set3: " + set3);
-        System.out.println("set4: " + set4);
-        System.out.println("union(set3, set4): " + Sets.union(set3, set4));
-        System.out.println("union(set3, set4) type: " +
-                Sets.union(set3, set4).getClass().getSimpleName());
-        //输出：
-        //System.out: union(set1, set2) type: MiniEnumSet
-        //System.out: set3: [1]
-        //System.out: set4: [2]
-        //System.out: union(set3, set4): [1, 2]
-        //System.out: union(set3, set4) type: HashSet
-
+//        Set<Watercolors> set1 = EnumSet.range(BRILLIANT_RED, VIRIDIAN_HUE);
+//        Set<Watercolors> set2 = EnumSet.range(CERULEAN_BLUE_HUE, BURNT_UMBER);
+//        System.out.println("set1: " + set1);
+//        System.out.println("set2: " + set2);
+//        System.out.println("union(set1, set2): " + Sets.union(set1, set2));
+//        System.out.println("union(set1, set2) type: " +
+//                Sets.union(set1, set2).getClass().getSimpleName());
+//        Set<Integer> set3 = new HashSet<Integer>();
+//        set3.add(1);
+//        Set<Integer> set4 = new HashSet<Integer>();
+//        set4.add(2);
+//        System.out.println("set3: " + set3);
+//        System.out.println("set4: " + set4);
+//        System.out.println("union(set3, set4): " + Sets.union(set3, set4));
+//        System.out.println("union(set3, set4) type: " +
+//                Sets.union(set3, set4).getClass().getSimpleName());
+//        //输出：
+//        //System.out: union(set1, set2) type: MiniEnumSet
+//        //System.out: set3: [1]
+//        //System.out: set4: [2]
+//        //System.out: union(set3, set4): [1, 2]
+//        //System.out: union(set3, set4) type: HashSet
 
         //practice15.18  FishEatFish.java
+
+        //practice15.19
+        System.out.println(new CargoShip(14, 5, 10));
+
 
 
 

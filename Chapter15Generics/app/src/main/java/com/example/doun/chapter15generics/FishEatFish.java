@@ -50,7 +50,7 @@ class BigFish {
 
 public class FishEatFish {
     public static void serve(BigFish t, LittleFish c) {
-        System.out.println(t + " serves " + c);
+        System.out.println(t + " eat " + c);
     }
 
     public static void main(String[] args) {
