@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println(TupleTest2.l());
 
 
-        //practice15.17  从习题答案抄来的
+        //practice15.17  关于set知之甚少，所以从习题答案抄来的
         Set<Watercolors> set1 = EnumSet.range(BRILLIANT_RED, VIRIDIAN_HUE);
         Set<Watercolors> set2 = EnumSet.range(CERULEAN_BLUE_HUE, BURNT_UMBER);
         System.out.println("set1: " + set1);
@@ -133,6 +133,9 @@ public class MainActivity extends AppCompatActivity {
         //System.out: set4: [2]
         //System.out: union(set3, set4): [1, 2]
         //System.out: union(set3, set4) type: HashSet
+
+
+        //practice15.18  FishEatFish.java
 
 
 
