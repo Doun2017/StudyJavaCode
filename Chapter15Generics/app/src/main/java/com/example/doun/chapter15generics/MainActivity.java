@@ -137,12 +137,19 @@ public class MainActivity extends AppCompatActivity {
         //practice15.18  FishEatFish.java
 
         //practice15.19
-        System.out.println(new CargoShip(14, 5, 10));
+//        System.out.println(new CargoShip(14, 5, 10));
+
+        //practice15.20
+        func(new ClassHasThreeFunc());
 
 
 
 
+    }
 
+    public static <E extends HasTwoFunc> void func(E t){
+        t.func1();
+        t.func2();
     }
 
     void f(List<QingTianZhu> list){}
