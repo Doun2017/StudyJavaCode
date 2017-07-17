@@ -152,13 +152,20 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice15.22
-        ClassTypeCapture<Building> ctt1 = new ClassTypeCapture<Building>(Building.class);
-        Building building = (Building) ctt1.c("new Building");
-        Log.d(TAG, building.toString());
+//        ClassTypeCapture<Building> ctt1 = new ClassTypeCapture<Building>(Building.class);
+//        Building building = (Building) ctt1.c("new Building");
+//        Log.d(TAG, building.toString());
 
         //practice15.23  FactoryConstraint.java
 
-
+        //practice15.24
+        ClassTypeCapture2<Building> ctt1 = new ClassTypeCapture2<>(Building.class);
+        ctt1.addType("Building2", new Building2.Factory());
+        Float flo = (Float)ctt1.createNew("float");
+        Building2 building2 = (Building2)ctt1.createNew("Building2");
+        if (building2 != null){
+            Log.d(TAG, "生成了Building2");
+        }
 
 
 
