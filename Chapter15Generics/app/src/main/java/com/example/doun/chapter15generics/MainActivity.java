@@ -156,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
         Building building = (Building) ctt1.c("new Building");
         Log.d(TAG, building.toString());
 
+        //practice15.23  FactoryConstraint.java
 
 
 
