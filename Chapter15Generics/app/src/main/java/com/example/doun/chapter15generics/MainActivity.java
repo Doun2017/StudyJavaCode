@@ -9,6 +9,7 @@ import com.example.doun.chapter15generics.pets.Pet;
 
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -169,10 +170,17 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice15.25
-        Practice25 practice25 = new Practice25();
-        Practice25.func1(practice25);
-        Practice25.func2(practice25);
+//        Practice25 practice25 = new Practice25();
+//        Practice25.func1(practice25);
+//        Practice25.func2(practice25);
 
+        //practice15.26
+        Number numbers[] = new Integer[]{1,2,3,4,5};
+        Log.d(TAG, Arrays.toString(numbers));
+
+        //practice15.27
+//        List<Number> numbers1 = new ArrayList<Integer>();
+        List<? extends Number> numbers1 = new ArrayList<Integer>();
 
 
 
