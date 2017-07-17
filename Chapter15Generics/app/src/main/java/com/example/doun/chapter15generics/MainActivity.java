@@ -143,13 +143,24 @@ public class MainActivity extends AppCompatActivity {
 //        func(new ClassHasThreeFunc());
 
         //practice15.21
+//        ClassTypeCapture<Building> ctt1 = new ClassTypeCapture<Building>(Building.class);
+//        ctt1.addType("string", String.class);
+//        Float flo = (Float)ctt1.createNew("float");
+//        String str = (String)ctt1.createNew("string");
+//        if (str != null){
+//            Log.d(TAG, "生成了String");
+//        }
+
+        //practice15.22
         ClassTypeCapture<Building> ctt1 = new ClassTypeCapture<Building>(Building.class);
-        ctt1.addType("string", String.class);
-        Float flo = (Float)ctt1.createNew("float");
-        String str = (String)ctt1.createNew("string");
-        if (str != null){
-            Log.d(TAG, "生成了String");
-        }
+        Building building = (Building) ctt1.c("new Building");
+        Log.d(TAG, building.toString());
+
+
+
+
+
+
 
 
     }
