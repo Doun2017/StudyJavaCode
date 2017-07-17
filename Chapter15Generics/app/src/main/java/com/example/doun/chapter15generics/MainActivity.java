@@ -7,6 +7,7 @@ import android.util.Log;
 import com.example.doun.chapter15generics.pets.Dog;
 import com.example.doun.chapter15generics.pets.Pet;
 
+import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.HashSet;
@@ -159,14 +160,18 @@ public class MainActivity extends AppCompatActivity {
         //practice15.23  FactoryConstraint.java
 
         //practice15.24
-        ClassTypeCapture2<Building> ctt1 = new ClassTypeCapture2<>(Building.class);
-        ctt1.addType("Building2", new Building2.Factory());
-        Float flo = (Float)ctt1.createNew("float");
-        Building2 building2 = (Building2)ctt1.createNew("Building2");
-        if (building2 != null){
-            Log.d(TAG, "生成了Building2");
-        }
+//        ClassTypeCapture2<Building> ctt1 = new ClassTypeCapture2<>(Building.class);
+//        ctt1.addType("Building2", new Building2.Factory());
+//        Float flo = (Float)ctt1.createNew("float");
+//        Building2 building2 = (Building2)ctt1.createNew("Building2");
+//        if (building2 != null){
+//            Log.d(TAG, "生成了Building2");
+//        }
 
+        //practice15.25
+        Practice25 practice25 = new Practice25();
+        Practice25.func1(practice25);
+        Practice25.func2(practice25);
 
 
 
