@@ -140,9 +140,16 @@ public class MainActivity extends AppCompatActivity {
 //        System.out.println(new CargoShip(14, 5, 10));
 
         //practice15.20
-        func(new ClassHasThreeFunc());
+//        func(new ClassHasThreeFunc());
 
-
+        //practice15.21
+        ClassTypeCapture<Building> ctt1 = new ClassTypeCapture<Building>(Building.class);
+        ctt1.addType("string", String.class);
+        Float flo = (Float)ctt1.createNew("float");
+        String str = (String)ctt1.createNew("string");
+        if (str != null){
+            Log.d(TAG, "生成了String");
+        }
 
 
     }
