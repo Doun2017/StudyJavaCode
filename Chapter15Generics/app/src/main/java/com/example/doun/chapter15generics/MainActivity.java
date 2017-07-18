@@ -192,6 +192,14 @@ public class MainActivity extends AppCompatActivity {
 
         //practice15.29 main函数
 
+        //practice15.30
+        Holder3<Float> floatHolder3 = new Holder3<>(3.3f);
+        float f = floatHolder3.get();
+        Log.d(TAG, f+"");
+        f=4.4f;
+        floatHolder3.set(f);
+        Log.d(TAG, floatHolder3.get()+"");
+
     }
 
 
