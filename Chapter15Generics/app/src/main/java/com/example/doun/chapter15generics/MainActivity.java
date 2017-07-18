@@ -9,6 +9,7 @@ import com.example.doun.chapter15generics.pets.Cat;
 import com.example.doun.chapter15generics.pets.Dog;
 import com.example.doun.chapter15generics.pets.Pet;
 
+import java.io.ObjectInputStream;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -193,15 +194,35 @@ public class MainActivity extends AppCompatActivity {
         //practice15.29 main函数
 
         //practice15.30
-        Holder3<Float> floatHolder3 = new Holder3<>(3.3f);
-        float f = floatHolder3.get();
-        Log.d(TAG, f+"");
-        f=4.4f;
-        floatHolder3.set(f);
-        Log.d(TAG, floatHolder3.get()+"");
+//        Holder3<Float> floatHolder3 = new Holder3<>(3.3f);
+//        float f = floatHolder3.get();
+//        Log.d(TAG, f+"");
+//        f=4.4f;
+//        floatHolder3.set(f);
+//        Log.d(TAG, floatHolder3.get()+"");
 
         //practice15.31  MultipleInterfaceVariants.java
 
+        //practice15.32
+//        int SIZE = 10;//SIZE大于10就会异常
+//        FixedSizeStack<String> strings = new FixedSizeStack<String>(SIZE);
+//        for (String s : "A B C D E F G H I J".split(" "))
+//            strings.push(s);
+//        for (int i = 0; i < SIZE; i++) {
+//            String s = strings.pop();
+//            System.out.println(s + " ");
+////            Log.d(TAG, s + " ");
+//        }
+
+        //practice15.33
+        MyFixedSizeStack<String> strings1 = new MyFixedSizeStack<String>();
+        for (String s : "A B E F G H I J".split(" "))
+            strings1.push(s);
+        String s = strings1.pop();
+        while (s != null) {
+            System.out.println(s + " ");
+            s = strings1.pop();
+        }
 
 
 
