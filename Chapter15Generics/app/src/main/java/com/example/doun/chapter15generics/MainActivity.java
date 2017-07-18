@@ -200,6 +200,11 @@ public class MainActivity extends AppCompatActivity {
         floatHolder3.set(f);
         Log.d(TAG, floatHolder3.get()+"");
 
+        //practice15.31  MultipleInterfaceVariants.java
+
+
+
+
     }
 
 
