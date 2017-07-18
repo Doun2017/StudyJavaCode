@@ -1,5 +1,6 @@
 package com.example.doun.chapter15generics;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,10 +12,13 @@ import com.example.doun.chapter15generics.pets.Pet;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.EnumSet;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
@@ -185,6 +189,43 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice15.28  Practice28.java
+
+        //practice15.29 main函数
+
+    }
+
+
+    public static void main(String[] args) {
+        List<?> list = new ArrayList<String>();
+        Holder3<List<?>> holder3 = new Holder3<List<?>>(list);
+        practiceFunc29(holder3);
+        practiceFunc29(new Holder3<List<?>>(list));
+
+        Holder3<String> holder31 = new Holder3<>("33");
+        List<Holder3<?>> list1 = new ArrayList<>();
+        list1.add(holder31);
+        practiceFunc29reverse(list1);
+    }
+
+    public static void practiceFunc29(Holder3<List<?>> holder3){
+        List<String> list1 = new ArrayList<>();
+        list1.add("123");
+        holder3.set(list1);
+        List<?> list2 = holder3.get();
+//        list2.add("fds");
+//        list2.add(new Object());
+        System.out.println(list2.toString());
+    }
+
+    public static void practiceFunc29reverse(List<Holder3<?>> list){
+        Holder3<?> holder = list.get(0);
+        Object o = holder.get();
+        System.out.println(o.toString());
+//        holder.set(new Object());
+
+        Holder3<String> holder3 = new Holder3<>("321");
+        list.add(holder3);
+        System.out.println(list.toString());
 
     }
 
