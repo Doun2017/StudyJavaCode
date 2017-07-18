@@ -218,9 +218,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public static void practiceFunc29reverse(List<Holder3<?>> list){
-        Holder3<?> holder = list.get(0);
-        Object o = holder.get();
-        System.out.println(o.toString());
+//        Holder3<?> holder = list.get(0);
+//        Object o = holder.get();
+//        System.out.println(o.toString());
+        String str = (String)list.get(0).get();
+//        Integer str = (Integer) list.get(0).get();//java.lang.ClassCastException: java.lang.String cannot be cast to java.lang.Integer
+        System.out.println(str);
 //        holder.set(new Object());
 
         Holder3<String> holder3 = new Holder3<>("321");
