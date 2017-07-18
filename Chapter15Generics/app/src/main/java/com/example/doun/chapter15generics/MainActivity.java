@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.example.doun.chapter15generics.pets.Cat;
 import com.example.doun.chapter15generics.pets.Dog;
 import com.example.doun.chapter15generics.pets.Pet;
 
@@ -175,14 +176,15 @@ public class MainActivity extends AppCompatActivity {
 //        Practice25.func2(practice25);
 
         //practice15.26
-        Number numbers[] = new Integer[]{1,2,3,4,5};
-        Log.d(TAG, Arrays.toString(numbers));
+//        Number numbers[] = new Integer[]{1,2,3,4,5};
+//        Log.d(TAG, Arrays.toString(numbers));
 
         //practice15.27
-//        List<Number> numbers1 = new ArrayList<Integer>();
-        List<? extends Number> numbers1 = new ArrayList<Integer>();
+////        List<Number> numbers1 = new ArrayList<Integer>();
+//        List<? extends Number> numbers1 = new ArrayList<Integer>();
 
 
+        //practice15.28  Practice28.java
 
     }
 
