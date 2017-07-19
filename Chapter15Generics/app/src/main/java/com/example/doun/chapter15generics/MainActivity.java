@@ -215,16 +215,19 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice15.33
-        MyFixedSizeStack<String> strings1 = new MyFixedSizeStack<String>();
-        for (String s : "A B E F G H I J".split(" "))
-            strings1.push(s);
-        String s = strings1.pop();
-        while (s != null) {
-            System.out.println(s + " ");
-            s = strings1.pop();
-        }
+//        MyFixedSizeStack<String> strings1 = new MyFixedSizeStack<String>();
+//        for (String s : "A B E F G H I J".split(" "))
+//            strings1.push(s);
+//        String s = strings1.pop();
+//        while (s != null) {
+//            System.out.println(s + " ");
+//            s = strings1.pop();
+//        }
 
-
+        //practice15.34
+        Practice34 practice34 = new Practice34();
+        Log.d(TAG, "origin-"+practice34.toString());
+        Log.d(TAG, "return-"+practice34.callFunc(new Practice34()).toString());
 
     }
 
