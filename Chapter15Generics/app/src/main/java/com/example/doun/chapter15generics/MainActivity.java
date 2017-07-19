@@ -7,13 +7,17 @@ import android.util.Log;
 
 import com.example.doun.chapter15generics.pets.Cat;
 import com.example.doun.chapter15generics.pets.Dog;
+import com.example.doun.chapter15generics.pets.Mouse;
 import com.example.doun.chapter15generics.pets.Pet;
+import com.example.doun.chapter15generics.pets.Rat;
+import com.example.doun.chapter15generics.pets.Rodent;
 
 import java.io.ObjectInputStream;
 import java.lang.reflect.Proxy;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -225,10 +229,25 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         //practice15.34
-        Practice34 practice34 = new Practice34();
-        Log.d(TAG, "origin-"+practice34.toString());
-        Log.d(TAG, "return-"+practice34.callFunc(new Practice34()).toString());
+//        Practice34 practice34 = new Practice34();
+//        Log.d(TAG, "origin-"+practice34.toString());
+//        Log.d(TAG, "return-"+practice34.callFunc(new Practice34()).toString());
 
+        //practice15.35
+        List<Mouse> Mouses1 = new ArrayList<Mouse>();
+        CheckedList.oldStyleMethod(Mouses1);
+        List<Mouse> Mouses2 = Collections.checkedList(
+                new ArrayList<Mouse>(), Mouse.class);
+        try {
+            CheckedList.oldStyleMethod(Mouses2); // Throws an exception
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        // Derived types work fine:
+        List<Rodent> rodents = Collections.checkedList(
+                new ArrayList<Rodent>(), Rodent.class);
+        rodents.add(new Mouse());
+        rodents.add(new Rat());
     }
 
 
