@@ -248,6 +248,16 @@ public class MainActivity extends AppCompatActivity {
                 new ArrayList<Rodent>(), Rodent.class);
         rodents.add(new Mouse());
         rodents.add(new Rat());
+
+        //practice15.36 ThrowGenericException.java
+
+
+
+
+
+
+
+
     }
 
 
