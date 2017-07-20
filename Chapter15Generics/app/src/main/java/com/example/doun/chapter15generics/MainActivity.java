@@ -250,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
         rodents.add(new Rat());
 
         //practice15.36 ThrowGenericException.java
+        //practice15.36 Mixins.java
 
 
 
