@@ -257,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
         //practice15.39 DynamicProxyMixin.java
         //practice15.40 Apply.java
         //practice15.41 Fill2.java
+        //practice15.41 StringAdder.java
 
 
 
