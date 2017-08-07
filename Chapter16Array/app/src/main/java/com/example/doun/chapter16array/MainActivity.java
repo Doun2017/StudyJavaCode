@@ -4,7 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -53,14 +55,19 @@ public class MainActivity extends AppCompatActivity {
 //        //practice 16.8
 //        ArrayOfGenericType<String> arrayOfGenericType = new ArrayOfGenericType<>(3);
 
+//        //practice 16.9
+//        //! Peel<Banana> bananaPeel[] = new Peel<Banana>[10];
+//        ArrayList<Peel<Banana>> peels = new ArrayList<>(10);
+//        peels.add(new Peel<Banana>(1));
+//        Peel<Banana> peel = peels.get(0);
 
-
+        //practice 16.10 见类ChangedArrayOfGenericType
     }
     int arr[][];
 
     public class ArrayOfGenericType<T> {
         T[] array; // OK
-        //        //practice 16.8 然并无
+        //practice 16.8 去掉注解将会产生unchecked cast警告
         //@SuppressWarnings("unchecked")
         public ArrayOfGenericType(int size) {
             //! array = new T[size]; // Illegal
@@ -70,6 +77,27 @@ public class MainActivity extends AppCompatActivity {
         //! public <U> U[] makeArray() { return new U[10]; }
     } ///:~
 
+    public class ChangedArrayOfGenericType<T> {
+        List<T> array;
+        public ChangedArrayOfGenericType(int size) {
+            array = new ArrayList<>(size);
+        }
+        // Illegal:
+        //! public <U> U[] makeArray() { return new U[10]; }
+    } ///:~
+
+    public class Banana{}
+    public class Peel<T> {
+        T[] array; // OK
+        //        //practice 16.8 然并无
+        @SuppressWarnings("unchecked")
+        public Peel(int size) {
+            //! array = new T[size]; // Illegal
+            array = (T[])new Object[size]; // "unchecked" Warning
+        }
+        // Illegal:
+        //! public <U> U[] makeArray() { return new U[10]; }
+    } ///:~
 
     public BerylliumSphere[][] creatBerylliumSphere(int lines, int rows){
         BerylliumSphere [][]berylliumSpheres = new BerylliumSphere[lines][rows];
