@@ -62,6 +62,31 @@ public class MainActivity extends AppCompatActivity {
 //        Peel<Banana> peel = peels.get(0);
 
         //practice 16.10 见类ChangedArrayOfGenericType
+
+
+//        //practice 16.11
+//        int a[] = new int[4];
+//        Integer b[] = new Integer[3];
+//        //!a = b;
+//        //!b = a;
+
+        //practice 16.12
+        double d[] = new double[10];
+        CountingGenerator.Double g = new CountingGenerator.Double();
+        for (int i=0; i<10; i++){
+            d[i] = g.next();
+        }
+        Log.e(TAG, Arrays.toString(d));
+
+
+
+
+
+
+
+
+
+
     }
     int arr[][];
 
