@@ -35,8 +35,47 @@ public class MainActivity extends AppCompatActivity {
         //practice 16.3
 //        printDoubles(createDoubles(5,4,1.9,48.9));
 
-        //practice 16.4
-        printDoubles3(createDoubles3(5,4,2,1.9,48.9));
+//        //practice 16.4
+//        printDoubles3(createDoubles3(5,4,2,1.9,48.9));
+
+
+//        //practice 16.5
+//        if (arr == null){
+//            Log.e(TAG, "arr is null");
+//        }
+
+//        //practice 16.6
+//        Log.e(TAG, Arrays.deepToString(creatBerylliumSphere(2,6)));
+
+        //practice 16.7
+        Log.e(TAG, Arrays.deepToString(creatBerylliumSphere(2,6,3)));
+
+
+
+
+
+    }
+    int arr[][];
+
+    public BerylliumSphere[][] creatBerylliumSphere(int lines, int rows){
+        BerylliumSphere [][]berylliumSpheres = new BerylliumSphere[lines][rows];
+        for (int i=0;i<lines;i++){
+            for (int j=0;j<rows;j++){
+                berylliumSpheres[i][j]=new BerylliumSphere();
+            }
+        }
+        return berylliumSpheres;
+    }
+    public BerylliumSphere[][][] creatBerylliumSphere(int lines, int rows, int zs){
+        BerylliumSphere [][][]berylliumSpheres = new BerylliumSphere[lines][rows][zs];
+        for (int i=0;i<lines;i++){
+            for (int j=0;j<rows;j++){
+                for (int k=0;k<zs;k++){
+                    berylliumSpheres[i][j][k]=new BerylliumSphere();
+                }
+            }
+        }
+        return berylliumSpheres;
     }
 
     public void showBerylliumSphere(BerylliumSphere[] berylliumSpheres){
