@@ -47,15 +47,29 @@ public class MainActivity extends AppCompatActivity {
 //        //practice 16.6
 //        Log.e(TAG, Arrays.deepToString(creatBerylliumSphere(2,6)));
 
-        //practice 16.7
-        Log.e(TAG, Arrays.deepToString(creatBerylliumSphere(2,6,3)));
+//        //practice 16.7
+//        Log.e(TAG, Arrays.deepToString(creatBerylliumSphere(2,6,3)));
 
-
+//        //practice 16.8
+//        ArrayOfGenericType<String> arrayOfGenericType = new ArrayOfGenericType<>(3);
 
 
 
     }
     int arr[][];
+
+    public class ArrayOfGenericType<T> {
+        T[] array; // OK
+        //        //practice 16.8 然并无
+        //@SuppressWarnings("unchecked")
+        public ArrayOfGenericType(int size) {
+            //! array = new T[size]; // Illegal
+            array = (T[])new Object[size]; // "unchecked" Warning
+        }
+        // Illegal:
+        //! public <U> U[] makeArray() { return new U[10]; }
+    } ///:~
+
 
     public BerylliumSphere[][] creatBerylliumSphere(int lines, int rows){
         BerylliumSphere [][]berylliumSpheres = new BerylliumSphere[lines][rows];
