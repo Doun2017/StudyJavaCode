@@ -70,14 +70,24 @@ public class MainActivity extends AppCompatActivity {
 //        //!a = b;
 //        //!b = a;
 
-        //practice 16.12
-        double d[] = new double[10];
-        CountingGenerator.Double g = new CountingGenerator.Double();
+//        //practice 16.12
+//        double d[] = new double[10];
+//        CountingGenerator.Double g = new CountingGenerator.Double();
+//        for (int i=0; i<10; i++){
+//            d[i] = g.next();
+//        }
+//        Log.e(TAG, Arrays.toString(d));
+
+        //practice 16.13
+        char d[] = new char[10];
+        CountingGenerator.Character g = new CountingGenerator.Character();
         for (int i=0; i<10; i++){
             d[i] = g.next();
         }
-        Log.e(TAG, Arrays.toString(d));
+        Log.e(TAG, new String(d));
 
+        //practice 16.14 与练习12重复 略
+        //practice 16.15 see ContainerComparison.java
 
 
 
