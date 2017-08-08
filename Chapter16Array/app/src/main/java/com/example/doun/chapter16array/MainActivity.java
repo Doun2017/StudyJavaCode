@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
         //practice 16.14 与练习12重复 略
         //practice 16.15 see ContainerComparison.java
+        //practice 16.16 see SkipGenerator.java
 
 
 
