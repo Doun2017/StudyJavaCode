@@ -93,11 +93,18 @@ public class MainActivity extends AppCompatActivity {
         //practice 16.15 see ContainerComparison.java
         //practice 16.16 see SkipGenerator.java
 
-        //practice 16.17
-        int size = 6;
-        java.math.BigDecimal[] a1 = Generated.array(java.math.BigDecimal.class, new CountingGenerator.BigDecimal(), size);
-        print("a1 = " + Arrays.toString(a1));
+//        //practice 16.17
+//        int size = 6;
+//        java.math.BigDecimal[] a1 = Generated.array(java.math.BigDecimal.class, new CountingGenerator.BigDecimal(), size);
+//        print("a1 = " + Arrays.toString(a1));
 
+        //practice 16.18
+        BerylliumSphere berylliumSpheres1[] = new BerylliumSphere[]{new BerylliumSphere(),new BerylliumSphere(),
+                new BerylliumSphere(),new BerylliumSphere(),new BerylliumSphere()};
+        BerylliumSphere berylliumSpheres2[] = new BerylliumSphere[berylliumSpheres1.length];
+        System.arraycopy(berylliumSpheres1, 0, berylliumSpheres2, 0, berylliumSpheres1.length);
+        print("berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
+        print("berylliumSpheres2 = " + Arrays.toString(berylliumSpheres2));//打印出的对象id都一样，证明了是浅拷贝
 
 
 
