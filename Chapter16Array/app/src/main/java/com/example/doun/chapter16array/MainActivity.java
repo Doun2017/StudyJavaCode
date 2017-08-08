@@ -4,9 +4,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 
@@ -116,12 +119,51 @@ public class MainActivity extends AppCompatActivity {
 //        Practice19 p2[][] = new Practice19[][]{{new Practice19(1)}, {new Practice19(2)}, {new Practice19(3)}};
 //        Log.e(TAG, "result = " + Arrays.deepEquals(p1, p2));
 
-        //practice 16.21
-        BerylliumSphere berylliumSpheres1[] = new BerylliumSphere[]{new BerylliumSphere(),new BerylliumSphere(),
-                new BerylliumSphere(),new BerylliumSphere(),new BerylliumSphere()};
-        Log.e(TAG, "berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
-        Arrays.sort(berylliumSpheres1);
-        Log.e(TAG, "after sort ：：berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
+//        //practice 16.21
+//        BerylliumSphere berylliumSpheres1[] = new BerylliumSphere[]{new BerylliumSphere(),new BerylliumSphere(),
+//                new BerylliumSphere(),new BerylliumSphere(),new BerylliumSphere()};
+//        Log.e(TAG, "berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
+//        Arrays.sort(berylliumSpheres1);
+//        Log.e(TAG, "after sort ：：berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
+
+
+//        //practice 16.22
+//        int arrayi[] =  new int[]{2,4,5,1,3};
+//        Log.e(TAG, "pos = " + Arrays.binarySearch(arrayi, 3));//输出竟然是-2，果然在未排序数组中查找是不可预知的。
+//
+//        int arrayi[] =  new int[]{1,2,3,4,5};
+//        Log.e(TAG, "pos = " + Arrays.binarySearch(arrayi, 3));//输出竟然是-2，果然在未排序数组中查找是不可预知的。
+//
+
+//        //practice 16.23
+//        Generator<Integer> gen = new SkipGenerator.Integer(2);
+//        Integer[] a = Generated.array(new Integer[25], gen);
+//        print("before Sorted array: " + Arrays.toString(a));
+//        Arrays.sort(a, Collections.reverseOrder());
+//        print("Sorted array: " + Arrays.toString(a));
+
+        //practice 16.23
+        Practice19 arrayi[] =  new Practice19[]{new Practice19(2),new Practice19(1),
+                new Practice19(3),new Practice19(5),new Practice19(4)};
+        Comparator<Practice19> comparator = new Comparator<Practice19>() {
+            @Override
+            public int compare(Practice19 o1, Practice19 o2) {
+                if (o1.getMyi()==o2.getMyi()) return 0;
+                return o1.getMyi()>o2.getMyi()?1:-1;
+            }
+        };
+        Arrays.sort(arrayi, comparator);
+        Log.e(TAG, "pos = " + Arrays.binarySearch(arrayi, new Practice19(2), comparator));
+
+
+
+
+
+
+
+
+
+
 
     }
     int arr[][];

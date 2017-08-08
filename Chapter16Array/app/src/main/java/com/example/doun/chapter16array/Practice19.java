@@ -5,6 +5,10 @@ package com.example.doun.chapter16array;
  */
 
 public class Practice19 {
+    public int getMyi() {
+        return myi;
+    }
+
     private int myi;
 
     public Practice19(int myi) {
