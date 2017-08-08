@@ -2,13 +2,25 @@
 // Initialization & re-assignment of arrays.
 package com.example.doun.chapter16array;
 
+import android.support.annotation.NonNull;
+
 import java.util.*;
 //import static net.mindview.util.Print.*;
 
-class BerylliumSphere {
+class BerylliumSphere implements Comparable<BerylliumSphere>{
     private static long counter;
+
+    public long getId() {
+        return id;
+    }
+
     private final long id = counter++;
     public String toString() { return "Sphere " + id; }
+
+    @Override
+    public int compareTo(@NonNull BerylliumSphere o) {
+        return (int)(o.getId() - getId());
+    }
 }
 
 public class ArrayOptions {

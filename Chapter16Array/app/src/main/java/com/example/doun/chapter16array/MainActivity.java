@@ -111,13 +111,17 @@ public class MainActivity extends AppCompatActivity {
 //        Practice19 p2[] = new Practice19[]{new Practice19(1), new Practice19(2), new Practice19(3)};
 //        Log.e(TAG, "result = " + Arrays.equals(p1, p2));
 
-        //practice 16.20
-        Practice19 p1[][] = new Practice19[][]{{new Practice19(1)}, {new Practice19(2)}, {new Practice19(3)}};
-        Practice19 p2[][] = new Practice19[][]{{new Practice19(1)}, {new Practice19(2)}, {new Practice19(3)}};
-        Log.e(TAG, "result = " + Arrays.deepEquals(p1, p2));
+//        //practice 16.20
+//        Practice19 p1[][] = new Practice19[][]{{new Practice19(1)}, {new Practice19(2)}, {new Practice19(3)}};
+//        Practice19 p2[][] = new Practice19[][]{{new Practice19(1)}, {new Practice19(2)}, {new Practice19(3)}};
+//        Log.e(TAG, "result = " + Arrays.deepEquals(p1, p2));
 
-
-
+        //practice 16.21
+        BerylliumSphere berylliumSpheres1[] = new BerylliumSphere[]{new BerylliumSphere(),new BerylliumSphere(),
+                new BerylliumSphere(),new BerylliumSphere(),new BerylliumSphere()};
+        Log.e(TAG, "berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
+        Arrays.sort(berylliumSpheres1);
+        Log.e(TAG, "after sort ：：berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
 
     }
     int arr[][];
