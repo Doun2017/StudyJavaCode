@@ -8,9 +8,11 @@ import java.lang.reflect.Array;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
 
 import static com.example.doun.chapter16array.ArrayOptions.print;
@@ -142,27 +144,45 @@ public class MainActivity extends AppCompatActivity {
 //        Arrays.sort(a, Collections.reverseOrder());
 //        print("Sorted array: " + Arrays.toString(a));
 
-        //practice 16.24
-        Practice19 arrayi[] =  new Practice19[]{new Practice19(2),new Practice19(1),
-                new Practice19(3),new Practice19(5),new Practice19(4)};
-        Comparator<Practice19> comparator = new Comparator<Practice19>() {
-            @Override
-            public int compare(Practice19 o1, Practice19 o2) {
-                if (o1.getMyi()==o2.getMyi()) return 0;
-                return o1.getMyi()>o2.getMyi()?1:-1;
+//        //practice 16.24
+//        Practice19 arrayi[] =  new Practice19[]{new Practice19(2),new Practice19(1),
+//                new Practice19(3),new Practice19(5),new Practice19(4)};
+//        Comparator<Practice19> comparator = new Comparator<Practice19>() {
+//            @Override
+//            public int compare(Practice19 o1, Practice19 o2) {
+//                if (o1.getMyi()==o2.getMyi()) return 0;
+//                return o1.getMyi()>o2.getMyi()?1:-1;
+//            }
+//        };
+//        Arrays.sort(arrayi, comparator);
+//        Log.e(TAG, "pos = " + Arrays.binarySearch(arrayi, new Practice19(2), comparator));
+
+        //practice 16.25 来自习题解答
+        List<Integer> aList = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5));
+        print(aList.getClass().getSimpleName());
+        print(aList.toString());
+        print(aList.get(4).toString());
+        aList.add(6);
+        aList.addAll(Arrays.asList(7, 8));
+        print(aList.toString());
+        List<Integer> aSlice = aList.subList(2, 4);
+        print(aSlice.toString());
+        class MyArrayList<T> extends ArrayList<T> {
+            MyArrayList(Collection<? extends T> c) { super(c); }
+            MyArrayList(int initialCapacity) {
+                super(initialCapacity);
             }
-        };
-        Arrays.sort(arrayi, comparator);
-        Log.e(TAG, "pos = " + Arrays.binarySearch(arrayi, new Practice19(2), comparator));
-
-
-
-
-
-
-
-
-
+            List<T> getReversed() {
+                List<T> reversed = new MyArrayList<T>(size());
+                ListIterator<T> it = listIterator(size());
+                while(it.hasPrevious())
+                    reversed.add(it.previous());
+                return reversed;
+            }
+        }
+        MyArrayList<Integer> list2 = new MyArrayList<Integer>(aList);
+        print(list2.getClass().getSimpleName());
+        print(list2.getReversed().toString());
 
 
     }
