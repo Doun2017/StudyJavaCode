@@ -98,15 +98,23 @@ public class MainActivity extends AppCompatActivity {
 //        java.math.BigDecimal[] a1 = Generated.array(java.math.BigDecimal.class, new CountingGenerator.BigDecimal(), size);
 //        print("a1 = " + Arrays.toString(a1));
 
-        //practice 16.18
-        BerylliumSphere berylliumSpheres1[] = new BerylliumSphere[]{new BerylliumSphere(),new BerylliumSphere(),
-                new BerylliumSphere(),new BerylliumSphere(),new BerylliumSphere()};
-        BerylliumSphere berylliumSpheres2[] = new BerylliumSphere[berylliumSpheres1.length];
-        System.arraycopy(berylliumSpheres1, 0, berylliumSpheres2, 0, berylliumSpheres1.length);
-        print("berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
-        print("berylliumSpheres2 = " + Arrays.toString(berylliumSpheres2));//打印出的对象id都一样，证明了是浅拷贝
+//        //practice 16.18
+//        BerylliumSphere berylliumSpheres1[] = new BerylliumSphere[]{new BerylliumSphere(),new BerylliumSphere(),
+//                new BerylliumSphere(),new BerylliumSphere(),new BerylliumSphere()};
+//        BerylliumSphere berylliumSpheres2[] = new BerylliumSphere[berylliumSpheres1.length];
+//        System.arraycopy(berylliumSpheres1, 0, berylliumSpheres2, 0, berylliumSpheres1.length);
+//        print("berylliumSpheres1 = " + Arrays.toString(berylliumSpheres1));
+//        print("berylliumSpheres2 = " + Arrays.toString(berylliumSpheres2));//打印出的对象id都一样，证明了是浅拷贝
 
+//        //practice 16.19
+//        Practice19 p1[] = new Practice19[]{new Practice19(1), new Practice19(2), new Practice19(3)};
+//        Practice19 p2[] = new Practice19[]{new Practice19(1), new Practice19(2), new Practice19(3)};
+//        Log.e(TAG, "result = " + Arrays.equals(p1, p2));
 
+        //practice 16.20
+        Practice19 p1[][] = new Practice19[][]{{new Practice19(1)}, {new Practice19(2)}, {new Practice19(3)}};
+        Practice19 p2[][] = new Practice19[][]{{new Practice19(1)}, {new Practice19(2)}, {new Practice19(3)}};
+        Log.e(TAG, "result = " + Arrays.deepEquals(p1, p2));
 
 
 
