@@ -4,10 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+
+import static com.example.doun.chapter16array.ArrayOptions.print;
 
 public class MainActivity extends AppCompatActivity {
     public final static String TAG = "MainActivity";
@@ -78,19 +81,22 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        Log.e(TAG, Arrays.toString(d));
 
-        //practice 16.13
-        char d[] = new char[10];
-        CountingGenerator.Character g = new CountingGenerator.Character();
-        for (int i=0; i<10; i++){
-            d[i] = g.next();
-        }
-        Log.e(TAG, new String(d));
+//        //practice 16.13
+//        char d[] = new char[10];
+//        CountingGenerator.Character g = new CountingGenerator.Character();
+//        for (int i=0; i<10; i++){
+//            d[i] = g.next();
+//        }
+//        Log.e(TAG, new String(d));
 
         //practice 16.14 与练习12重复 略
         //practice 16.15 see ContainerComparison.java
         //practice 16.16 see SkipGenerator.java
 
-
+        //practice 16.17
+        int size = 6;
+        java.math.BigDecimal[] a1 = Generated.array(java.math.BigDecimal.class, new CountingGenerator.BigDecimal(), size);
+        print("a1 = " + Arrays.toString(a1));
 
 
 
