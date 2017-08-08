@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
 //        Arrays.sort(a, Collections.reverseOrder());
 //        print("Sorted array: " + Arrays.toString(a));
 
-        //practice 16.23
+        //practice 16.24
         Practice19 arrayi[] =  new Practice19[]{new Practice19(2),new Practice19(1),
                 new Practice19(3),new Practice19(5),new Practice19(4)};
         Comparator<Practice19> comparator = new Comparator<Practice19>() {
