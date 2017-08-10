@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //practice 18.1 见DirList.java
+        //practice 18.2 见SortedDirList.java
 
 
 
