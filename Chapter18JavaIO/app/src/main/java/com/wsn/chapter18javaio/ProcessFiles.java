@@ -48,9 +48,13 @@ public class ProcessFiles {
     } /* Demonstration of how to use it:*/
 
     public static void main(String[] args) {
+        //practice 18.5 18.6
         new ProcessFiles(new ProcessFiles.Strategy() {
             public void process(File file) {
-                System.out.println(file);
+                long lastModiy = file.lastModified();
+                long time = System.currentTimeMillis()-3*3600*1000;
+                if(lastModiy<time)
+                    System.out.println(file);
             }
         }, ".*.java").start(args);
     }
