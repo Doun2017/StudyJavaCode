@@ -19,12 +19,19 @@ public class DirList {
         else
             list = path.list(new DirFilter(args[0]));
         Arrays.sort(list, String.CASE_INSENSITIVE_ORDER);
+        //练习18.1
         for (String dirItem : list){
             String file = read(dirItem);
-            if (file.contains("test"))
+            if (file.contains("test"))//查看文件内容中是否包含此单词
                 System.out.println(dirItem);
         }
-
+        //练习18.3
+        int sizeSum=0;
+        for (String dirItem : list){
+            String file = read(dirItem);
+            sizeSum+=file.length();//将目录中所有文件的长度相加
+            System.out.println(sizeSum+"");
+        }
 
     }
 }
