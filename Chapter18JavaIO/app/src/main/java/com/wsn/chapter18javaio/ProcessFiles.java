@@ -54,7 +54,7 @@ public class ProcessFiles {
                 long lastModiy = file.lastModified();
                 long time = System.currentTimeMillis()-3*3600*1000;
                 if(lastModiy<time)
-                    System.out.println(file);
+                    System.out.println(time+" "+lastModiy+" "+file);
             }
         }, ".*.java").start(args);
     }
