@@ -11,7 +11,7 @@ import java.util.LinkedList;
 
 public class Practise10 {
 
-    LinkedList<String> list = new LinkedList<>();
+    public LinkedList<String> list = new LinkedList<>();
 
     // Throw exceptions to console:
     public void read(String filename) throws IOException {

@@ -27,7 +27,7 @@ public class Pracise7 {
 
     public static void main(String[] args) throws IOException {
         Pracise7 p = new Pracise7();
-        p.read("BufferedInputFile.java");
+        p.read("Pracise7.java");
         p.show();
     }
 }
