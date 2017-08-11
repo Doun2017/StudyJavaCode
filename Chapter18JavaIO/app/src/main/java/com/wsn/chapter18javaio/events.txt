@@ -1,0 +1,8 @@
+Bell 50
+LightOn 100
+LightOff 200
+WaterOn 400
+WaterOff 500
+ThermostatDay 600
+ThermostatNight 800
+Terminate 1000
