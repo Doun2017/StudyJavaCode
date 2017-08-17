@@ -18,27 +18,31 @@
 9:     public static void main(String[] args) throws IOException {
 10:         LineNumberReader in = new LineNumberReader(new StringReader(BufferedInputFile.read("BasicFileOutput.java")));
 10:         LineNumberReader in = new LineNumberReader(new StringReader(BufferedInputFile.read("BasicFileOutput.java")));
-11:         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
-11:         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
-12:         int lineCount = 1;
-12:         int lineCount = 1;
-13:         String s;
-13:         String s;
-14:         while ((s = in.readLine()) != null){
-14:         while ((s = in.readLine()) != null){
-15:             out.println(lineCount++ + ": " + s);
-15:             out.println(lineCount++ + ": " + s);
-16:             out.println(in.getLineNumber() + ": " + s);
-16:             out.println(in.getLineNumber() + ": " + s);
-17:         }
-17:         }
-18:           out.close();
-18:           out.close();
-19:         // Show the stored file:
-19:         // Show the stored file:
-20:         System.out.println(BufferedInputFile.read(file));
-20:         System.out.println(BufferedInputFile.read(file));
-21:     }
-21:     }
-22: } /* (Execute to see output) *///:~
-22: } /* (Execute to see output) *///:~
+11:         System.out.println("begin:"+ System.currentTimeMillis());
+11:         System.out.println("begin:"+ System.currentTimeMillis());
+12:         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+12:         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+13:         int lineCount = 1;
+13:         int lineCount = 1;
+14:         String s;
+14:         String s;
+15:         while ((s = in.readLine()) != null){
+15:         while ((s = in.readLine()) != null){
+16:             out.println(lineCount++ + ": " + s);
+16:             out.println(lineCount++ + ": " + s);
+17:             out.println(in.getLineNumber() + ": " + s);
+17:             out.println(in.getLineNumber() + ": " + s);
+18:         }
+18:         }
+19:         out.close();
+19:         out.close();
+20:         System.out.println("end  :"+ System.currentTimeMillis());
+20:         System.out.println("end  :"+ System.currentTimeMillis());
+21:         // Show the stored file:
+21:         // Show the stored file:
+22:         System.out.println(BufferedInputFile.read(file));
+22:         System.out.println(BufferedInputFile.read(file));
+23:     }
+23:     }
+24: } /* (Execute to see output) *///:~
+24: } /* (Execute to see output) *///:~

@@ -1,15 +1,25 @@
-//: io/BasicFileOutput.java
 package com.wsn.chapter18javaio;
 
-import java.io.*;
+import android.os.SystemClock;
 
-public class BasicFileOutput {
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.io.PrintWriter;
+import java.io.StringReader;
+
+/**
+ * Created by power on 2017/8/17,017.
+ */
+
+public class BasicFileOutput14 {
     static String file = "BasicFileOutput.out";
 
     public static void main(String[] args) throws IOException {
         LineNumberReader in = new LineNumberReader(new StringReader(BufferedInputFile.read("BasicFileOutput.java")));
         System.out.println("begin:"+ System.currentTimeMillis());
-        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+        PrintWriter out = new PrintWriter(new FileWriter(file));
         int lineCount = 1;
         String s;
         while ((s = in.readLine()) != null){
@@ -21,4 +31,4 @@ public class BasicFileOutput {
         // Show the stored file:
         System.out.println(BufferedInputFile.read(file));
     }
-} /* (Execute to see output) *///:~
+}
