@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         //practice 18.9 Practise9.java
         //practice 18.10 Practise10.java
         //practice 18.11 GreenhouseController.java
+        //practice 18.12 Practise12.java
+        //practice 18.13 BasicFileOutput.java
 
 
     }

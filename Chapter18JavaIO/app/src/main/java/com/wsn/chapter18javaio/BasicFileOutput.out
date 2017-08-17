@@ -1,0 +1,44 @@
+1: //: io/BasicFileOutput.java
+1: //: io/BasicFileOutput.java
+2: package com.wsn.chapter18javaio;
+2: package com.wsn.chapter18javaio;
+3: 
+3: 
+4: import java.io.*;
+4: import java.io.*;
+5: 
+5: 
+6: public class BasicFileOutput {
+6: public class BasicFileOutput {
+7:     static String file = "BasicFileOutput.out";
+7:     static String file = "BasicFileOutput.out";
+8: 
+8: 
+9:     public static void main(String[] args) throws IOException {
+9:     public static void main(String[] args) throws IOException {
+10:         LineNumberReader in = new LineNumberReader(new StringReader(BufferedInputFile.read("BasicFileOutput.java")));
+10:         LineNumberReader in = new LineNumberReader(new StringReader(BufferedInputFile.read("BasicFileOutput.java")));
+11:         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+11:         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file)));
+12:         int lineCount = 1;
+12:         int lineCount = 1;
+13:         String s;
+13:         String s;
+14:         while ((s = in.readLine()) != null){
+14:         while ((s = in.readLine()) != null){
+15:             out.println(lineCount++ + ": " + s);
+15:             out.println(lineCount++ + ": " + s);
+16:             out.println(in.getLineNumber() + ": " + s);
+16:             out.println(in.getLineNumber() + ": " + s);
+17:         }
+17:         }
+18:           out.close();
+18:           out.close();
+19:         // Show the stored file:
+19:         // Show the stored file:
+20:         System.out.println(BufferedInputFile.read(file));
+20:         System.out.println(BufferedInputFile.read(file));
+21:     }
+21:     }
+22: } /* (Execute to see output) *///:~
+22: } /* (Execute to see output) *///:~
