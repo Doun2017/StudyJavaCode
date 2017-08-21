@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
         //practice 18.22 OSExecuteDemo.java
         //practice 18.23 Practise23.java
         //practice 18.24 IntBufferDemo.java
+        //practice 18.25 MappedIO.java  Practise25.java
+        //由图能够看出，当操作数据量非常小时，两种分配方式操作使用时间基本是同样的，allocate有时可能会更快，可是当数据量非常大时，allocateDirect会远远大于第一种的分配方式。
 
 
     }
