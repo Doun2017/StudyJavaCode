@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 18.19 Practise19.java
         //practice 18.20 Practise20.java
         //practice 18.21 Echo.java
+        //practice 18.22 OSExecuteDemo.java
 
 
     }
