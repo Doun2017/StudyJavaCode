@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         //practice 18.16 UsingRandomAccessFile.java
         //practice 18.17 Practise17.java
         //practice 18.18 TextFile18.java
+        //practice 18.19 Practise19.java
+        //practice 18.20 Practise20.java
 
 
     }
