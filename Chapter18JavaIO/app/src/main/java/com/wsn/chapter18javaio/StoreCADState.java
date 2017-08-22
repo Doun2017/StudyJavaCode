@@ -57,6 +57,27 @@ class Circle extends Shape {
     public int getColor() {
         return color;
     }
+
+
+    public static void serializeStaticState(ObjectOutputStream os) throws IOException {
+        os.writeInt(color);
+    }
+
+    public static void deserializeStaticState(ObjectInputStream os) throws IOException {
+        color = os.readInt();
+    }
+
+
+    private void writeObject(java.io.ObjectOutputStream out)
+            throws IOException{
+        out.defaultWriteObject();
+        serializeStaticState(out);
+    }
+    private void readObject(java.io.ObjectInputStream in)
+            throws IOException, ClassNotFoundException{
+        in.defaultReadObject();
+        deserializeStaticState(in);
+    }
 }
 
 class Square extends Shape {
@@ -73,6 +94,26 @@ class Square extends Shape {
 
     public int getColor() {
         return color;
+    }
+
+    public static void serializeStaticState(ObjectOutputStream os) throws IOException {
+        os.writeInt(color);
+    }
+
+    public static void deserializeStaticState(ObjectInputStream os) throws IOException {
+        color = os.readInt();
+    }
+
+
+    private void writeObject(java.io.ObjectOutputStream out)
+            throws IOException{
+        out.defaultWriteObject();
+        serializeStaticState(out);
+    }
+    private void readObject(java.io.ObjectInputStream in)
+            throws IOException, ClassNotFoundException{
+        in.defaultReadObject();
+        deserializeStaticState(in);
     }
 }
 
@@ -130,8 +171,8 @@ public class StoreCADState {
         // Save the state vector:
         ObjectOutputStream out = new ObjectOutputStream(
                 new FileOutputStream("CADState.out"));
-        out.writeObject(shapeTypes);
-        Line.serializeStaticState(out);
+//        out.writeObject(shapeTypes);
+//        Line.serializeStaticState(out);
         out.writeObject(shapes);
         // Display the shapes:
         System.out.println(shapes);
