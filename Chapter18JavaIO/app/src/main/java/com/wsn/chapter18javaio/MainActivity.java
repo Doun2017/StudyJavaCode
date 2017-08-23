@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 18.30 StoreCADState.java  RecoverCADState.java
         //practice 18.31 Person.java  People.java(xom不能读取，不知为何)
         //practice 18.32 Practice31。java(xom不能读取，不知为何)
+        //practice 18.33 E33_PreferencesDemo.java(没读懂题意，直接上的习题答案)
 
 
     }
