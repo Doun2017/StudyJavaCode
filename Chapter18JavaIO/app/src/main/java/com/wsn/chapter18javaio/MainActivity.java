@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 18.29 Blip3.java
         //practice 18.30 StoreCADState.java  RecoverCADState.java
         //practice 18.31 Person.java  People.java(xom不能读取，不知为何)
+        //practice 18.32 Practice31。java(xom不能读取，不知为何)
 
 
     }
