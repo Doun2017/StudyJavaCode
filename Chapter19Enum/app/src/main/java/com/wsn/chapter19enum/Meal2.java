@@ -8,7 +8,8 @@ public enum Meal2 {
     APPETIZER(Food.Appetizer.class),
     MAINCOURSE(Food.MainCourse.class),
     DESSERT(Food.Dessert.class),
-    COFFEE(Food.Coffee.class);
+    COFFEE(Food.Coffee.class),
+    SEASONING(Food.Seasoning.class);
     private Food[] values;
 
     private Meal2(Class<? extends Food> kind) {
@@ -33,6 +34,10 @@ public enum Meal2 {
         enum Coffee implements Food {
             BLACK_COFFEE, DECAF_COFFEE, ESPRESSO,
             LATTE, CAPPUCCINO, TEA, HERB_TEA;
+        }
+
+        enum Seasoning implements Food {
+            VINEGAR, SAUCE, SESAME_OIL;
         }
     }
 
