@@ -9,5 +9,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //practice 19.1 TrafficLight.java
+        //practice 19.2 EnumImplementation.java
+        //practice 19.3 Course.java Food.java Meal.java
+
+
+
     }
 }
