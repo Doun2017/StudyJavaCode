@@ -36,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
         //practice 19.8 PostOffice.java 中的类PostOffice
         //practice 19.9 PostOffice.java 中的类PostOffice1
         //practice 19.10 VendingMachine10.java
+        //practice 19.11 E11_VendingMachine3.java 此题太麻烦了没有自己具体实现。大致思路是用一个类从文件中获取商品信息（名字和价格），
+        //再用一个新的包含硬币信息和商品信息的input类代替之前VendingMachine.java中的Input类。其他部分的代码相应改变。
 
 
 
