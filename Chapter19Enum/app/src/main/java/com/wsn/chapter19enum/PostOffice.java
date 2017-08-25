@@ -4,6 +4,8 @@ package com.wsn.chapter19enum;
 
 import java.util.*;
 
+import static com.wsn.chapter19enum.PostOffice1.MailHandler.*;
+
 //import net.mindview.util.*;
 
 //import static net.mindview.util.Print.*;
@@ -85,6 +87,111 @@ class Mail {
                 };
             }
         };
+    }
+}
+
+class PostOffice1 {
+
+    interface Handler { boolean handle(Mail m); }
+    enum MailHandler {
+        GENERAL_DELIVERY,
+        MACHINE_SCAN,
+        VISUAL_INSPECTION,
+        RETURN_TO_SENDER,
+        RETRANSMISSION
+    }
+
+
+
+//    static void handle(Mail m) {
+//        for (MailHandler handler : MailHandler.values())
+//            if (em.get(UTILITY).action())
+//            if (handler.handle(m))
+//                return;
+//        System.out.println(m + " is a dead letter");
+//    }
+
+    public static void main(String[] args) {
+        EnumMap<MailHandler,Handler> em = new EnumMap<>(MailHandler.class);
+
+        em.put(GENERAL_DELIVERY, new Handler() {
+            public boolean handle(Mail m) {
+                switch (m.generalDelivery) {
+                    case YES:
+                        System.out.println("Using general delivery for " + m);
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        });
+        em.put(MACHINE_SCAN, new Handler() {
+            public boolean handle(Mail m) {
+                switch (m.scannability) {
+                    case UNSCANNABLE:
+                        return false;
+                    default:
+                        switch (m.address) {
+                            case INCORRECT:
+                                return false;
+                            default:
+                                System.out.println("Delivering " + m + " automatically");
+                                return true;
+                        }
+                }
+            }
+        });
+        em.put(VISUAL_INSPECTION, new Handler() {
+            public boolean handle(Mail m) {
+                switch (m.readability) {
+                    case ILLEGIBLE:
+                        return false;
+                    default:
+                        switch (m.address) {
+                            case INCORRECT:
+                                return false;
+                            default:
+                                System.out.println("Delivering " + m + " normally");
+                                return true;
+                        }
+                }
+            }
+        });
+        em.put(RETURN_TO_SENDER, new Handler() {
+            public boolean handle(Mail m) {
+                switch (m.returnAddress) {
+                    case MISSING:
+                        return false;
+                    default:
+                        System.out.println("Returning " + m + " to sender");
+                        return true;
+                }
+            }
+        });
+        em.put(RETRANSMISSION, new Handler() {
+            public boolean handle(Mail m) {
+                switch (m.retransmission) {
+                    case UNABLE:
+                        return false;
+                    default:
+                        System.out.println("Retransmission " + m + " good");
+                        return true;
+                }
+            }
+        });
+        for (Mail mail : Mail.generator(20)) {
+            System.out.println(mail.details());
+            boolean handled = false;
+            for (MailHandler handler : MailHandler.values()){
+                if (em.get(handler).handle(mail)){
+                    handled = true;
+                    break;
+                }
+            }
+            if (handled == false)
+                System.out.println(mail + " is a dead letter");
+            System.out.println("*****");
+        }
     }
 }
 

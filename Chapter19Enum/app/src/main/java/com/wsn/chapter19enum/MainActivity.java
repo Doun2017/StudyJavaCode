@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
         //处理多与64个元素的情况，后者处理最多64各元素的情况。EnumSet的主入口是static方法noneOf(),
         //其他的static方法都会调用此方法。
 
-        //practice 19.8 PostOffice.java
+        //practice 19.8 PostOffice.java 中的类PostOffice
+        //practice 19.9 PostOffice.java 中的类PostOffice1
 
 
 
