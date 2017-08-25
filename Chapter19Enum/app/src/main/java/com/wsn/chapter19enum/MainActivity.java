@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         //practice 19.8 PostOffice.java 中的类PostOffice
         //practice 19.9 PostOffice.java 中的类PostOffice1
+        //practice 19.10 VendingMachine10.java
 
 
 
