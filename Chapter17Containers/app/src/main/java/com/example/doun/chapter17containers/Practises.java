@@ -7,9 +7,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -104,12 +106,45 @@ public class Practises {
 
 
         //practice 17.6
-        List<String> list = Arrays.asList("A B C D E F G H I J K L".split(" "));
-        testList("Modifiable Copy", new ArrayList<String>(list));
-        testList("Arrays.asList()", list);
-        testList("unmodifiableList()", Collections.unmodifiableList(new ArrayList<String>(list)));
+//        List<String> list = Arrays.asList("A B C D E F G H I J K L".split(" "));
+//        testList("Modifiable Copy", new ArrayList<String>(list));
+//        testList("Arrays.asList()", list);
+//        testList("unmodifiableList()", Collections.unmodifiableList(new ArrayList<String>(list)));
 
+        //practice 17.7
+        List<String> arrayList = new ArrayList<>(names(10));
+        List<String> linkedList = new LinkedList<>(names(10));
 
+        Iterator<String> arrayIter = arrayList.iterator();
+        Iterator<String> linkedIter = linkedList.iterator();
+
+        while (arrayIter.hasNext()){
+            System.out.println(arrayIter.next());
+        }
+        System.out.println();
+
+        while (linkedIter.hasNext()){
+            System.out.println(linkedIter.next());
+        }
+        System.out.println();
+
+        ListIterator<String> linkedListIter = linkedList.listIterator();
+        int index=0;
+        while (linkedListIter.hasNext()){
+            ListIterator<String> arrayListIter = arrayList.listIterator(index);
+            arrayListIter.add(linkedListIter.next());
+            index += 2;
+        }
+        System.out.println(arrayList);
+
+        linkedListIter = linkedList.listIterator(linkedList.size());
+        index=0;
+        while (linkedListIter.hasPrevious()){
+            ListIterator<String> arrayListIter = arrayList.listIterator(index);
+            arrayListIter.add(linkedListIter.previous());
+            index += 2;
+        }
+        System.out.println(arrayList);
 
     }
 
