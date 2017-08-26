@@ -184,8 +184,7 @@ public class Countries {
                 return size;
             }
 
-            private class Iter
-                    implements Iterator<Map.Entry<String, String>> {
+            private class Iter implements Iterator<Map.Entry<String, String>> {
                 // Only one Entry object per Iterator:
                 private Entry entry = new Entry(-1);
 

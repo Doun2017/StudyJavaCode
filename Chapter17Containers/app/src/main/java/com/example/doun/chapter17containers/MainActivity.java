@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
         //practice 17.1-3 Practises.java
         //practice 17.4 CollectionDataTest.java
+        //practice 17.5 CountingMapData.java和CountingMapData5.java习题答案
 
     }
 }
