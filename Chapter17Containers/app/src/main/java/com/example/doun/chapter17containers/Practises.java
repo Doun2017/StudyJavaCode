@@ -1,6 +1,8 @@
 package com.example.doun.chapter17containers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -20,6 +22,38 @@ import static com.example.doun.chapter17containers.Countries.*;
 
 public class Practises {
 
+    static void testList(String msg, List<String> list) {
+        System.out.println("--- " + msg + " ---");
+        List<String> c = list;
+        List<String> subList = list.subList(1, 8);
+        // Copy of the sublist:
+        List<String> c2 = new ArrayList<String>(subList);
+
+
+        try {
+            c.addAll(0, c2);
+        } catch (Exception e) {
+            System.out.println("addAll(): " + e);
+        }
+        try {
+            c.set(0, "replaced");
+        } catch (Exception e) {
+            System.out.println("set(): " + e);
+        }
+        try {
+            c.add(0, "addded");
+        } catch (Exception e) {
+            System.out.println("add(): " + e);
+        }
+        try {
+            c.remove(0);
+        } catch (Exception e) {
+            System.out.println("remove(): " + e);
+        }
+//    default void replaceAll(UnaryOperator<E> operator) {
+//        default void sort(Comparator<? super E> c) {Collections.sort(this, c);
+
+    }
     public static void main(String[] args) {
 
         //practice 17.1
@@ -56,17 +90,26 @@ public class Practises {
 //        System.out.println(allNamesA.size());
 
         //practice 17.3
-        Set<String> hashSet = new HashSet<>();
-        Set<String> treeSet = new TreeSet<>();
-        Set<String> linkedHashSet = new LinkedHashSet<>();
-        for (int i=0; i<10; i++) {
-            hashSet.add(names(1).get(0));
-            treeSet.add(names(1).get(0));
-            linkedHashSet.add(names(1).get(0));
-        }
-        System.out.println(hashSet);
-        System.out.println(treeSet);
-        System.out.println(linkedHashSet);
+//        Set<String> hashSet = new HashSet<>();
+//        Set<String> treeSet = new TreeSet<>();
+//        Set<String> linkedHashSet = new LinkedHashSet<>();
+//        for (int i=0; i<10; i++) {
+//            hashSet.add(names(1).get(0));
+//            treeSet.add(names(1).get(0));
+//            linkedHashSet.add(names(1).get(0));
+//        }
+//        System.out.println(hashSet);
+//        System.out.println(treeSet);
+//        System.out.println(linkedHashSet);
+
+
+        //practice 17.6
+        List<String> list = Arrays.asList("A B C D E F G H I J K L".split(" "));
+        testList("Modifiable Copy", new ArrayList<String>(list));
+        testList("Arrays.asList()", list);
+        testList("unmodifiableList()", Collections.unmodifiableList(new ArrayList<String>(list)));
+
+
 
     }
 
