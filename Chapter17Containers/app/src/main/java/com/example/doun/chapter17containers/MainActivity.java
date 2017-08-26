@@ -10,7 +10,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //practice 17.1 Practises.java
+        //practice 17.1-3 Practises.java
+        //practice 17.4 CollectionDataTest.java
 
     }
 }
