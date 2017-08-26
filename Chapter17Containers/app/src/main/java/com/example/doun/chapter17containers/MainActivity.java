@@ -16,5 +16,6 @@ public class MainActivity extends AppCompatActivity {
 
         //practice 17.6 Practises.java
         //practice 17.7 Practises.java
+        //practice 17.8 E08_SList.java
     }
 }
