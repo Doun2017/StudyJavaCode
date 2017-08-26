@@ -5,10 +5,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 import static com.example.doun.chapter17containers.Countries.*;
 
@@ -38,22 +40,33 @@ public class Practises {
 //        System.out.println(list1);
 
         //practice 17.2
-        Map<String, String> all = capitals();
-        Map<String, String> allA = new HashMap<>();
-        Set<String> allNames = all.keySet();
-        Set<String> allNamesA = new HashSet<>();
-        for (String str : allNames){
-            if (str.charAt(0) == 'A'){
-                allNamesA.add(str);
-                allA.put(str, all.get(str));
-            }
+//        Map<String, String> all = capitals();
+//        Map<String, String> allA = new HashMap<>();
+//        Set<String> allNames = all.keySet();
+//        Set<String> allNamesA = new HashSet<>();
+//        for (String str : allNames){
+//            if (str.charAt(0) == 'A'){
+//                allNamesA.add(str);
+//                allA.put(str, all.get(str));
+//            }
+//        }
+//        System.out.println(allA);
+//        System.out.println(allA.size());
+//        System.out.println(allNamesA);
+//        System.out.println(allNamesA.size());
+
+        //practice 17.3
+        Set<String> hashSet = new HashSet<>();
+        Set<String> treeSet = new TreeSet<>();
+        Set<String> linkedHashSet = new LinkedHashSet<>();
+        for (int i=0; i<10; i++) {
+            hashSet.add(names(1).get(0));
+            treeSet.add(names(1).get(0));
+            linkedHashSet.add(names(1).get(0));
         }
-        System.out.println(allA);
-        System.out.println(allA.size());
-        System.out.println(allNamesA);
-        System.out.println(allNamesA.size());
-
-
+        System.out.println(hashSet);
+        System.out.println(treeSet);
+        System.out.println(linkedHashSet);
 
     }
 
