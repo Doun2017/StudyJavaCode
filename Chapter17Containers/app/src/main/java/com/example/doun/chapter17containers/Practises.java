@@ -112,39 +112,47 @@ public class Practises {
 //        testList("unmodifiableList()", Collections.unmodifiableList(new ArrayList<String>(list)));
 
         //practice 17.7
-        List<String> arrayList = new ArrayList<>(names(10));
-        List<String> linkedList = new LinkedList<>(names(10));
+//        List<String> arrayList = new ArrayList<>(names(10));
+//        List<String> linkedList = new LinkedList<>(names(10));
+//
+//        Iterator<String> arrayIter = arrayList.iterator();
+//        Iterator<String> linkedIter = linkedList.iterator();
+//
+//        while (arrayIter.hasNext()){
+//            System.out.println(arrayIter.next());
+//        }
+//        System.out.println();
+//
+//        while (linkedIter.hasNext()){
+//            System.out.println(linkedIter.next());
+//        }
+//        System.out.println();
+//
+//        ListIterator<String> linkedListIter = linkedList.listIterator();
+//        int index=0;
+//        while (linkedListIter.hasNext()){
+//            ListIterator<String> arrayListIter = arrayList.listIterator(index);
+//            arrayListIter.add(linkedListIter.next());
+//            index += 2;
+//        }
+//        System.out.println(arrayList);
+//
+//        linkedListIter = linkedList.listIterator(linkedList.size());
+//        index=0;
+//        while (linkedListIter.hasPrevious()){
+//            ListIterator<String> arrayListIter = arrayList.listIterator(index);
+//            arrayListIter.add(linkedListIter.previous());
+//            index += 2;
+//        }
+//        System.out.println(arrayList);
 
-        Iterator<String> arrayIter = arrayList.iterator();
-        Iterator<String> linkedIter = linkedList.iterator();
+        //practice 17.9
+        RandomGenerator.String RS = new RandomGenerator.String(8);
+        TreeSet<String> treeSet = new TreeSet<>();
+        for (int i=0; i<10; i++)
+            treeSet.add(RS.next());
+        System.out.println(treeSet);
 
-        while (arrayIter.hasNext()){
-            System.out.println(arrayIter.next());
-        }
-        System.out.println();
-
-        while (linkedIter.hasNext()){
-            System.out.println(linkedIter.next());
-        }
-        System.out.println();
-
-        ListIterator<String> linkedListIter = linkedList.listIterator();
-        int index=0;
-        while (linkedListIter.hasNext()){
-            ListIterator<String> arrayListIter = arrayList.listIterator(index);
-            arrayListIter.add(linkedListIter.next());
-            index += 2;
-        }
-        System.out.println(arrayList);
-
-        linkedListIter = linkedList.listIterator(linkedList.size());
-        index=0;
-        while (linkedListIter.hasPrevious()){
-            ListIterator<String> arrayListIter = arrayList.listIterator(index);
-            arrayListIter.add(linkedListIter.previous());
-            index += 2;
-        }
-        System.out.println(arrayList);
 
     }
 
