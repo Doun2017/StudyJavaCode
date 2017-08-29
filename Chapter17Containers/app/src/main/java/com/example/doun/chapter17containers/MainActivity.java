@@ -29,5 +29,6 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.15 Practise15.java
         //practice 17.16 SlowMap.java 主要解决entrySet()中产生的set返回的是副本而不是原始数据视图的问题。
         //practice 17.17 SlowMap.java 其所继承的AbstractMap<K, V>中已将大部分方法实现。
+        //practice 17.18 SlowSet.java
     }
 }
