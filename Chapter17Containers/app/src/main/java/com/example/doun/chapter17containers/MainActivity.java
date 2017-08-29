@@ -34,5 +34,6 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.20 SimpleHashMap20.java
         //practice 17.21 SimpleHashMap21.java
         //practice 17.22 23 SimpleHashMap.java
+        //practice 17.24 SimpleHashSet.java 自己没能实现，借鉴了答案
     }
 }
