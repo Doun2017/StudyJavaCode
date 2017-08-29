@@ -31,5 +31,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.17 SlowMap.java 其所继承的AbstractMap<K, V>中已将大部分方法实现。
         //practice 17.18 SlowSet.java
         //practice 17.19 Practise19.java
+        //practice 17.20 SimpleHashMap20.java
+        //practice 17.21 SimpleHashMap21.java
     }
 }
