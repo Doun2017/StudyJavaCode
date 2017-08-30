@@ -37,5 +37,6 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.24 SimpleHashSet.java 自己没能实现，借鉴了答案
         //practice 17.25 SimpleHashMap25.java
         //practice 17.26 CountedString.java
+        //practice 17.27 CountedString27.java 在hashcode中解除与id的绑定之后，找特定对象的操作会延伸至equals()，这样我们会损失一些散列的性能优势。
     }
 }
