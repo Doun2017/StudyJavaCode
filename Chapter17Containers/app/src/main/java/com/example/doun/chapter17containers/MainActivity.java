@@ -34,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.20 SimpleHashMap20.java
         //practice 17.21 SimpleHashMap21.java
         //practice 17.22 23 SimpleHashMap.java
-        //practice 17.24 SimpleHashSet.java 自己没能实现，借鉴了答案
+        //practice 17.24 SimpleHashSet.java 自己没能实现，借鉴了官方答案
         //practice 17.25 SimpleHashMap25.java
         //practice 17.26 CountedString.java
         //practice 17.27 CountedString27.java 在hashcode中解除与id的绑定之后，找特定对象的操作会延伸至equals()，这样我们会损失一些散列的性能优势。
+        //practice 17.28 Tuple.java 将原来TwoTuple ThreeTuple FourTuple FiveTuple之间的继承结构改为组合，因为这些泛型类都要实现
+        // Comparable接口，若用继承无法同时正确实现compareTo()。对于equals()也是一样。借鉴了官方答案
     }
 }
