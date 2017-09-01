@@ -44,5 +44,6 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.30 ListPerformance30.java
         //practice 17.31 MyStringVector.java
         //practice 17.32 MyIntVector.java
+        //practice 17.33 E33_ListPerformance3.java借鉴了官方答案
     }
 }
