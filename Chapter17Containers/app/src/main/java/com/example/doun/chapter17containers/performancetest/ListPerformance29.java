@@ -132,8 +132,7 @@ public class ListPerformance29 {
     }
 
     static class ListTester extends Tester<List<String>> {
-        public ListTester(List<String> container,
-                          List<Test<List<String>>> tests) {
+        public ListTester(List<String> container, List<Test<List<String>>> tests) {
             super(container, tests);
         }
 
@@ -146,8 +145,7 @@ public class ListPerformance29 {
         }
 
         // Convenience method:
-        public static void run(List<String> list,
-                               List<Test<List<String>>> tests) {
+        public static void run(List<String> list,List<Test<List<String>>> tests) {
             new ListPerformance29.ListTester(list, tests).timedTest();
         }
     }
