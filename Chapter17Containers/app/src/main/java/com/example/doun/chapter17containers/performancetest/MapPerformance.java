@@ -48,15 +48,23 @@ public class MapPerformance {
     }
 
     public static void main(String[] args) {
+        Tester.defaultParams = TestParam.array(10, 5000, 100, 5000, 1000, 5000);
+
         if (args.length > 0)
             Tester.defaultParams = TestParam.array(args);
-        Tester.run(new TreeMap<Integer, Integer>(), tests);
-        Tester.run(new HashMap<Integer, Integer>(), tests);
-        Tester.run(new LinkedHashMap<Integer, Integer>(), tests);
-        Tester.run(new IdentityHashMap<Integer, Integer>(), tests);
-        Tester.run(new WeakHashMap<Integer, Integer>(), tests);
-        Tester.run(new Hashtable<Integer, Integer>(), tests);
-        Tester.run(new SlowMap<Integer, Integer>(), tests);
+
+
+//        Tester.run(new TreeMap<Integer, Integer>(), tests);
+//        Tester.run(new HashMap<Integer, Integer>(), tests);
+//        Tester.run(new LinkedHashMap<Integer, Integer>(), tests);
+//        Tester.run(new IdentityHashMap<Integer, Integer>(), tests);
+//        Tester.run(new WeakHashMap<Integer, Integer>(), tests);
+//        Tester.run(new Hashtable<Integer, Integer>(), tests);
+
+//        Tester.run(new SlowMap<Integer, Integer>(), tests);
+
+        Tester.run(new MapEntrySlowMap1<Integer, Integer>(), tests);
+        Tester.run(new MapEntrySlowMap2<Integer, Integer>(), tests);
     }
 } /* Output: (Sample)
 ---------- TreeMap ----------
@@ -140,3 +148,15 @@ public class MapPerformance {
  1000    2242    1669      22
 10000   22756   17693      21
 */
+/*
+------ MapEntrySlowMap1 ------
+ size     put     get iterate
+   10     660     255      53
+  100     225     292       2
+ 1000    1572    2268       1
+------ MapEntrySlowMap2 ------
+ size     put     get iterate
+   10     466     275      24
+  100     595      51       2
+ 1000    5913      76       1
+ */
