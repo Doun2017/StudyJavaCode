@@ -1,6 +1,5 @@
 package com.example.doun.chapter17containers.performancetest;
 
-import java.nio.MappedByteBuffer;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -9,34 +8,34 @@ import java.util.List;
  * Created by Doun on 2017/9/1.
  */
 
-public class MyStringVector {
-    private String[] vector;
+public class MyIntVector {
+    private int[] vector;
     private int size = 0;
     private int maxsize = 0;
 
-    public MyStringVector() {
+    public MyIntVector() {
         maxsize = 10;
-        vector = new String[maxsize];
+        vector = new int[maxsize];
     }
 
-    public void add(String str) {
+    public void add(int str) {
         if (size >= maxsize) {
             maxsize += 10;
-            String[] newVector = Arrays.copyOf(vector, maxsize);
+            int[] newVector = Arrays.copyOf(vector, maxsize);
             vector = newVector;
         }
         vector[size] = str;
         size++;
     }
 
-    public String get(int index) {
+    public int get(int index) {
         if (index > size - 1)
-            return null;
+            return 0;
         else
             return vector[index];
     }
 
-    public void set(int index, String str) {
+    public void set(int index, int str) {
         if (index > size - 1)
             return;
         else
@@ -44,11 +43,11 @@ public class MyStringVector {
     }
 
 
-    public void insert(int index, String str) {
+    public void insert(int index, int str) {
         if (index > size - 1)
             return;
         while (index < size) {
-            String oldStr = vector[index];
+            int oldStr = vector[index];
             vector[index] = str;
             str = oldStr;
             index++;
@@ -59,17 +58,17 @@ public class MyStringVector {
     public void remove(int index) {
         if (index > size - 1)
             return;
-        vector[index] = null;
+        vector[index] = 0;
         while (index + 1 < size - 1) {
             vector[index] = vector[index + 1];
             index++;
         }
-        vector[index + 1] = null;
+        vector[index + 1] = 0;
     }
 
     static final int LOOPS = 10000;
     static List<Test<List<String>>> alTests = new ArrayList<Test<List<String>>>();
-    static List<Test<MyStringVector>> scTests = new ArrayList<Test<MyStringVector>>();
+    static List<Test<MyIntVector>> scTests = new ArrayList<Test<MyIntVector>>();
 
     static {
         alTests.add(new Test<List<String>>("addget") {
@@ -81,10 +80,10 @@ public class MyStringVector {
                 return LOOPS;
             }
         });
-        scTests.add(new Test<MyStringVector>("addget") {
-            int test(MyStringVector sc, TestParam tp) {
+        scTests.add(new Test<MyIntVector>("addget") {
+            int test(MyIntVector sc, TestParam tp) {
                 for (int i = 0; i < LOOPS; i++) {
-                    sc.add(Integer.toString(i));
+                    sc.add(i);
                     sc.get(i);
                 }
                 return LOOPS;
@@ -100,17 +99,17 @@ public class MyStringVector {
                     list.remove(199);
                     list.add(5, "123"); // Minimize random-access cost
                 }
-                    return LOOPS;
+                return LOOPS;
             }
         });
-        scTests.add(new Test<MyStringVector>("insertremove") {
-            int test(MyStringVector sc, TestParam tp) {
+        scTests.add(new Test<MyIntVector>("insertremove") {
+            int test(MyIntVector sc, TestParam tp) {
                 for (int i = 0; i < LOOPS; i++) {
-                    sc.add(Integer.toString(i));
+                    sc.add(i);
                 }
                 for (int i = 0; i < LOOPS; i++) {
                     sc.remove(199);
-                    sc.insert(5, "123"); // Minimize random-access cost
+                    sc.insert(5, 23); // Minimize random-access cost
                 }
                 return LOOPS;
             }
@@ -121,15 +120,15 @@ public class MyStringVector {
         // Parameters are also hard-coded inside tests.
         Tester.defaultParams = TestParam.array(LOOPS, 1);
         Tester.run(new ArrayList<String>(LOOPS), alTests);
-        Tester.run(new MyStringVector(), scTests);
+        Tester.run(new MyIntVector(), scTests);
 
     }
 }
 /*
------ ArrayList -----
+* ----- ArrayList -----
  size  addgetinsertremove
-10000     556   31246
---- MyStringVector ---
+10000    3760   21452
+---- MyIntVector ----
  size  addgetinsertremove
-10000    1750   74768
+10000    1406   35403
 */
