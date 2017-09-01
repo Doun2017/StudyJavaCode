@@ -186,6 +186,39 @@ public class ListPerformance {
 } /* Output: (Sample)
 --- Array as List ---
  size     get     set
+   10      10      12
+  100      10      18
+ 1000      10      10
+10000       9      11
+--------------------- ArrayList ---------------------
+ size     add     get     set iteradd  insert  remove
+   10      48      12      13      20     225      91
+  100      11      12      11      15     228      23
+ 1000      10      11      11      41     150      54
+10000       8      11      11     357    1646     419
+--------------------- LinkedList ---------------------
+ size     add     get     set iteradd  insert  remove
+   10      66      22      25      22     135      54
+  100       7      35      35       8      70      19
+ 1000       8     323     322       6      57      14
+10000      10    4049    4304      26      61      13
+----------------------- Vector -----------------------
+ size     add     get     set iteradd  insert  remove
+   10      63      11      12      20     237      57
+  100       6      11      12      17     214      28
+ 1000       9      12      12      45     149      58
+10000       7      11      13     356    1116     414
+-------------------- Queue tests --------------------
+ size    addFirst     addLast     rmFirst      rmLast
+   10          53          55          58          59
+  100          12          11          13          12
+ 1000           9           9          10          11
+10000          10          11          10           8
+
+
+
+--- Array as List ---
+ size     get     set
    10     130     183
   100     130     164
  1000     129     165
