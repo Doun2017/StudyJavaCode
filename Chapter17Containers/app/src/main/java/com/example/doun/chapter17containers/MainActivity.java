@@ -49,5 +49,9 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.35 MapPerformance.java
         //practice 17.36 MapEntrySlowMap1.java+MapPerformance.java借鉴了官方答案
         //practice 17.37 SimpleHashMaplist37.java+SimpleHashMapOfArraylist37.java
+        //practice 17.38 Practises.java
+        // Lookups make the map with a higher load factor less efficient but higher initial
+        // capacity minimizes (or even eliminates) rehash operations.
+        // 具有较高的负荷率的map查找效率比较低，但初始容量高会减少（甚至消除）rehash操作。
     }
 }

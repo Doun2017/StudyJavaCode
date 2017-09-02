@@ -56,6 +56,15 @@ public class Practises {
 //        default void sort(Comparator<? super E> c) {Collections.sort(this, c);
 
     }
+
+    public static void testGet(Map<String, String> filledMap, int n) {
+        for (int tc = 0; tc < 1000000; tc++)
+            for (int i = 0; i < Countries.DATA.length; i++) {
+                String key = Countries.DATA[i][0];
+                filledMap.get(key);
+            }
+    }
+
     public static void main(String[] args) {
 
         //practice 17.1
@@ -147,12 +156,28 @@ public class Practises {
 //        System.out.println(arrayList);
 
         //practice 17.9
-        RandomGenerator.String RS = new RandomGenerator.String(8);
-        TreeSet<String> treeSet = new TreeSet<>();
-        for (int i=0; i<10; i++)
-            treeSet.add(RS.next());
-        System.out.println(treeSet);
+//        RandomGenerator.String RS = new RandomGenerator.String(8);
+//        TreeSet<String> treeSet = new TreeSet<>();
+//        for (int i=0; i<10; i++)
+//            treeSet.add(RS.next());
+//        System.out.println(treeSet);
 
+        //practice 17.38
+        /* Initial capacity 16:*/
+        HashMap<String, String> map1 = new HashMap<String, String>();
+        /* Fill to less than threshold:*/
+        map1.putAll(Countries.capitals(11));
+        /* Initial capacity 32:*/
+        HashMap<String, String> map2 = new HashMap<String, String>(32);
+        map2.putAll(map1);
+        long t1 = System.currentTimeMillis();
+        testGet(map1, 11);
+        long t2 = System.currentTimeMillis();
+        System.out.println("map1 : " + (t2 - t1));
+        t1 = System.currentTimeMillis();
+        testGet(map2, 11);
+        t2 = System.currentTimeMillis();
+        System.out.println("map2 : " + (t2 - t1));
 
     }
 
