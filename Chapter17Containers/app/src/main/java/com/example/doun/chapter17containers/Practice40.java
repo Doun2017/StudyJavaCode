@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * Created by Doun on 2017/9/2.
@@ -30,7 +32,27 @@ public class Practice40 implements Comparable<Practice40> {
         return "stringOne:"+stringOne+"   stringTwo:"+stringTwo+"\n";
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Practice40 that = (Practice40) o;
+
+        if (!stringOne.equals(that.stringOne)) return false;
+        return stringTwo.equals(that.stringTwo);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = stringOne.hashCode();
+        result = 31 * result + stringTwo.hashCode();
+        return result;
+    }
+
     public static void main(String[] args) {
+        /*
         Practice40[] practice40s = new Practice40[10];
         RandomGenerator.String stringGen = new RandomGenerator.String();
 //        for (Practice40 p:practice40s){
@@ -78,7 +100,25 @@ public class Practice40 implements Comparable<Practice40> {
         int findIndex = Collections.binarySearch(practice40ArrayList,
                 new Practice40("PKNjWUl", "MJOTlae"),new Practice40Comparator());
         System.out.println("findIndex="+findIndex);
+        */
 
+
+        RandomGenerator.String stringGen = new RandomGenerator.String();
+        HashSet<Practice40> practice40HashSet = new HashSet<>();
+        for (int i=0;i<10;i++) {
+            practice40HashSet.add(new Practice40(stringGen.next(), stringGen.next()));
+        }
+        System.out.println(practice40HashSet);
+        System.out.println(practice40HashSet.contains(new Practice40("PKNjWUl", "MJOTlae")));
+        System.out.println(practice40HashSet.contains(new Practice40("YNzbrny", "GcFOWZn")));
+
+        HashMap<Practice40, String> practice40HashMap = new HashMap<>();
+        for (int i=0;i<10;i++) {
+            practice40HashMap.put(new Practice40(stringGen.next(), stringGen.next()), i+"");
+        }
+        System.out.println(practice40HashMap);
+
+        System.out.println("get:TQzGSrL,"+"rcVwhKO  "+practice40HashMap.get(new Practice40("TQzGSrL", "rcVwhKO"))+"");
     }
 }
 
