@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.39 E39_SimpleHashMapRehash.java
         //practice 17.40 Practice40.java
         //practice 17.41 Practice40.java
+        //practice 17.42 略 将Practice40.java中比较函数中使用String的toLowerCase（）即可。
 
     }
 }

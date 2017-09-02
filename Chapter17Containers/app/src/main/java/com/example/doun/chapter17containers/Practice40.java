@@ -52,8 +52,8 @@ public class Practice40 implements Comparable<Practice40> {
     }
 
     public static void main(String[] args) {
-        /*
-        Practice40[] practice40s = new Practice40[10];
+
+         /* Practice40[] practice40s = new Practice40[10];
         RandomGenerator.String stringGen = new RandomGenerator.String();
 //        for (Practice40 p:practice40s){
 //            p = new Practice40(stringGen.next(), stringGen.next());
@@ -75,9 +75,6 @@ public class Practice40 implements Comparable<Practice40> {
         System.out.println("排序后");
         System.out.println(Arrays.toString(practice40s));
         System.out.println(practice40ArrayList);
-
-
-
 
         for (int i=0;i<10;i++) {
             practice40s[i] = new Practice40(stringGen.next(), stringGen.next());
