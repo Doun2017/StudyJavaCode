@@ -48,5 +48,6 @@ public class MainActivity extends AppCompatActivity {
         //practice 17.34 SetPerformance34.java
         //practice 17.35 MapPerformance.java
         //practice 17.36 MapEntrySlowMap1.java+MapPerformance.java借鉴了官方答案
+        //practice 17.37 SimpleHashMaplist37.java+SimpleHashMapOfArraylist37.java
     }
 }

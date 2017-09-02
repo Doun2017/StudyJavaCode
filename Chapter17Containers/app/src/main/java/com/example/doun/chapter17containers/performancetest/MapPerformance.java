@@ -3,6 +3,7 @@
 // {Args: 100 5000} Small to keep build testing short
 package com.example.doun.chapter17containers.performancetest;
 
+import com.example.doun.chapter17containers.SimpleHashMap;
 import com.example.doun.chapter17containers.SlowMap;
 
 import java.util.*;
@@ -48,7 +49,7 @@ public class MapPerformance {
     }
 
     public static void main(String[] args) {
-        Tester.defaultParams = TestParam.array(10, 5000, 100, 5000, 1000, 5000);
+        Tester.defaultParams = TestParam.array(10, 5000, 100, 5000);
 
         if (args.length > 0)
             Tester.defaultParams = TestParam.array(args);
@@ -61,10 +62,20 @@ public class MapPerformance {
 //        Tester.run(new WeakHashMap<Integer, Integer>(), tests);
 //        Tester.run(new Hashtable<Integer, Integer>(), tests);
 
+        //practise35
 //        Tester.run(new SlowMap<Integer, Integer>(), tests);
 
-        Tester.run(new MapEntrySlowMap1<Integer, Integer>(), tests);
-        Tester.run(new MapEntrySlowMap2<Integer, Integer>(), tests);
+        //practise36
+//        Tester.run(new MapEntrySlowMap1<Integer, Integer>(), tests);
+//        Tester.run(new MapEntrySlowMap2<Integer, Integer>(), tests);
+
+        //practise37
+        Tester.run(new SimpleHashMap37<Integer, Integer>(), tests);
+        Tester.run(new SimpleHashMapOfArraylist37<Integer, Integer>(), tests);
+
+
+
+
     }
 } /* Output: (Sample)
 ---------- TreeMap ----------
