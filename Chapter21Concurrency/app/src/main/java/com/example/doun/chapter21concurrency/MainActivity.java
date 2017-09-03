@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.4 Exercise4.java
         //practice 21.5 Exercise5.java
         //practice 21.6 Exercise6.java
+        //practice 21.7 Daemons.java cpu使用了100%
 
     }
 }
