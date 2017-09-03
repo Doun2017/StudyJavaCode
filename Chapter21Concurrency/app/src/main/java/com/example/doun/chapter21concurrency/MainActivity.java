@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        //practice 21.1 Practises.java
+        //practice 21.1 Exercise1.java   Printer.java是官方答案
 
     }
 }
