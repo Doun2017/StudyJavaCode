@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.14 Exercise14.java
         //practice 21.15 Exercise15.java
         //practice 21.16 Exercise16.java
+        //practice 21.17 没有看懂题意，直接上答案。E17_RadiationCounter.java基本和书中的例子OrnamentalGarden一样。
 
     }
 }
