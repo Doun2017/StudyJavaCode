@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.9 SimplePriorities.java E09_SimplePrioritiesTF.java
         //practice 21.10 Exercise10.java
         //practice 21.11 Exercise11.java
+        //practice 21.12 Atomicity.java
 
     }
 }
