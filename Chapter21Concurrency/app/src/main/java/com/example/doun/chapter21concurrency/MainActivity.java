@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.13 SerialNumberGenerator.java SerialNumberChecker.java
         //practice 21.14 Exercise14.java
         //practice 21.15 Exercise15.java
+        //practice 21.16 Exercise16.java
 
     }
 }
