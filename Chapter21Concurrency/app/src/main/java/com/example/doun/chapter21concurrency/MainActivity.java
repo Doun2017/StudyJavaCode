@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.19 OrnamentalGarden.java E19_OrnamentalGarden2.java.受到答案启发才发现自己答案中的漏洞
         //practice 21.20 CachedThreadPool.java LiftOff.java
         //practice 21.21 Exercise21.java | E21_ThreadCooperation.java
+        //practice 21.22 Exercise22.java没理解题目的意思 官方答案 E22_BusyWait和E22_WaitNotify。意思是E22_BusyWait中没有设置wait和notify导致程序运行时占满cpu造成了“忙等待BusyWait”
 
     }
 }
