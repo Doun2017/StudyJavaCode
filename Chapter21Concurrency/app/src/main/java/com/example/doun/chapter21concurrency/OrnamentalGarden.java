@@ -53,9 +53,24 @@ class Entrance implements Runnable {
                 TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
                 System.out.println("sleep interrupted");
+                System.out.println("Stopping " + this);
+                return;
             }
         }
-        System.out.println("Stopping " + this);
+
+//        for (; ; ) {
+//            synchronized (this) {
+//                ++number;
+//            }
+//            System.out.println(this + " Total: " + count.increment());
+//            try {
+//                TimeUnit.MILLISECONDS.sleep(100);
+//            } catch (InterruptedException e) {
+//                System.out.println("Stopping " + this);
+//                return;
+//            }
+//        }
+
     }
 
     public synchronized int getValue() {
@@ -80,13 +95,35 @@ class Entrance implements Runnable {
 
 public class OrnamentalGarden {
     public static void main(String[] args) throws Exception {
+
+//        ExecutorService exec = Executors.newCachedThreadPool();
+//        for (int i = 0; i < 5; i++)
+//            exec.execute(new Entrance(i));
+//        // Run for a while, then stop and collect the data:
+//        TimeUnit.SECONDS.sleep(3);
+//        Entrance.cancel();
+//        exec.shutdown();
+//        if (!exec.awaitTermination(250, TimeUnit.MILLISECONDS))
+//            System.out.println("Some tasks were not terminated!");
+//        System.out.println("Total: " + Entrance.getTotalCount());
+//        System.out.println("Sum of Entrances: " + Entrance.sumEntrances());
+
         ExecutorService exec = Executors.newCachedThreadPool();
+        List<Future<?>> fs = new ArrayList<>();
         for (int i = 0; i < 5; i++)
-            exec.execute(new Entrance(i));
+            fs.add(exec.submit(new Entrance(i)));
+
+//        for (int i = 0; i < 5; i++)
+//            exec.execute(new Entrance(i));
+
         // Run for a while, then stop and collect the data:
         TimeUnit.SECONDS.sleep(3);
-        Entrance.cancel();
-        exec.shutdown();
+//        Entrance.cancel();  //让线程优雅退出
+        for (Future<?> f: fs) //通过Future的cancel中断线程
+            f.cancel(true);
+//        exec.shutdownNow();   //通过ExecutorService的shutdownNow中断线程，与future中断一样最终都是调用的Thread.interrupt(),都需要在runable的run方法中响应中断异常并退出才能最终结束线程。
+
+
         if (!exec.awaitTermination(250, TimeUnit.MILLISECONDS))
             System.out.println("Some tasks were not terminated!");
         System.out.println("Total: " + Entrance.getTotalCount());
