@@ -37,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.23 WaxOMatic.java 简单的将notifyall改为notify就行了
         //practice 21.24 没有看懂题意，直接上答案。E24_ProducerConsumer.java
         //practice 21.25 Restaurant.java
-        //practice 21.26 WaitPerson26.java
+        //practice 21.26 Restaurant26.java
+        //practice 21.27 Restaurant27.java
 
     }
 }
