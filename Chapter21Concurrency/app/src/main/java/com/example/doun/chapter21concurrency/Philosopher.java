@@ -6,7 +6,12 @@ import java.util.concurrent.*;
 import java.util.*;
 //import static net.mindview.util.System.out.println.*;
 
+
+class ChopstickQueue extends LinkedBlockingQueue<Chopstick> {
+}
+
 public class Philosopher implements Runnable {
+    ChopstickQueue chopsticks;
     private Chopstick left;
     private Chopstick right;
     private final int id;
@@ -18,9 +23,8 @@ public class Philosopher implements Runnable {
         TimeUnit.MILLISECONDS.sleep(rand.nextInt(ponderFactor * 10));
     }
 
-    public Philosopher(Chopstick left, Chopstick right, int ident, int ponder) {
-        this.left = left;
-        this.right = right;
+    public Philosopher(ChopstickQueue chopsticks, int ident, int ponder) {
+        this.chopsticks = chopsticks;
         id = ident;
         ponderFactor = ponder;
     }
@@ -31,14 +35,18 @@ public class Philosopher implements Runnable {
                 System.out.println(this + " " + "thinking");
                 pause();
                 // Philosopher becomes hungry
-                System.out.println(this + " " + "grabbing right");
-                right.take();
-                System.out.println(this + " " + "grabbing left");
+                System.out.println(this + " " + "grabbing one");
+                left = chopsticks.take();
                 left.take();
+                System.out.println(this + " " + "grabbing another");
+                right = chopsticks.take();
+                right.take();
                 System.out.println(this + " " + "eating");
                 pause();
                 right.drop();
                 left.drop();
+                chopsticks.add(left);
+                chopsticks.add(right);
             }
         } catch (InterruptedException e) {
             System.out.println(this + " " + "exiting via interrupt");

@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.28 TestBlockingQueues.java
         //practice 21.29 ToastOMatic.java 好像又没有理解题意，见E29_ToastOMatic2.java
         //practice 21.30 PipedIO.java
+        //practice 21.31 chopsticks.java Philosopher  DeadlockingDiningPhilosophers
 
     }
 }
