@@ -51,7 +51,7 @@ class WebCustomerGenerator implements Runnable {
     public void run() {
         try {
             while (!Thread.interrupted()) {
-                TimeUnit.MILLISECONDS.sleep(rand.nextInt(300));
+                TimeUnit.MILLISECONDS.sleep(rand.nextInt(50));
                 customers.put(new WebCustomer(rand.nextInt(1000)));
             }
         } catch (InterruptedException e) {
@@ -153,13 +153,13 @@ class WebTellerManager implements Runnable {
             workingTellers.add(WebTeller);
             return;
         }
-        // If line is short enough, remove a WebTeller:
-        if (workingTellers.size() > 1 && customers.size() / workingTellers.size() < 2)
-            reassignOneTeller();
-        // If there is no line, we only need one WebTeller:
-        if (customers.size() == 0)
-            while (workingTellers.size() > 1)
-                reassignOneTeller();
+//        // If line is short enough, remove a WebTeller:
+//        if (workingTellers.size() > 1 && customers.size() / workingTellers.size() < 2)
+//            reassignOneTeller();
+//        // If there is no line, we only need one WebTeller:
+//        if (customers.size() == 0)
+//            while (workingTellers.size() > 1)
+//                reassignOneTeller();
     }
 
     // Give a WebTeller a different job or a break:
