@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.30 PipedIO.java
         //practice 21.31 chopsticks.java Philosopher  DeadlockingDiningPhilosophers 当三根筷子三个philosopher，思考时间为10ms时会很容易死锁。
         //practice 21.32 OrnamentalGarden32.java
+        //practice 21.33 GreenhouseDelayQueue.java
+        //practice 21.34 ExchangerDemo34.java
 
     }
 }
