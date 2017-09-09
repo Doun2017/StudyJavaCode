@@ -8,7 +8,8 @@ import java.util.*;
 
 class CarB {
     private final int id;
-    private boolean engine = false, driveTrain = false, wheels = false;
+    private boolean engine = false, driveTrain = false, wheels = false,
+            exhaustSystem = false, carBody = false, bumper = false;
 
     public CarB(int idn) {
         id = idn;
@@ -23,6 +24,15 @@ class CarB {
         return id;
     }
 
+    public synchronized void addExhaustSystem() {
+        exhaustSystem = true;
+    }
+    public synchronized void addCarBody() {
+        carBody = true;
+    }
+    public synchronized void addBumper() {
+        bumper = true;
+    }
     public synchronized void addEngine() {
         engine = true;
     }
@@ -36,7 +46,10 @@ class CarB {
     }
 
     public synchronized String toString() {
-        return "CarB " + id + " [" + " engine: " + engine + " driveTrain: " + driveTrain + " wheels: " + wheels + " ]";
+        return "CarB " + id + " [" +
+                " engine: " + engine + " driveTrain: " + driveTrain + " wheels: " + wheels +
+                " exhaustSystem: " + exhaustSystem + " carBody: " + carBody + " bumper: " + bumper +
+                " ]";
     }
 }
 
@@ -71,7 +84,7 @@ class ChassisBuilder implements Runnable {
 class Assembler implements Runnable {
     private CarQueue chassisQueue, finishingQueue;
     private CarB CarB;
-    private CyclicBarrier barrier = new CyclicBarrier(4);
+    private CyclicBarrier barrier = new CyclicBarrier(7);
     private RobotPool robotPool;
 
     public Assembler(CarQueue cq, CarQueue fq, RobotPool rp) {
@@ -97,6 +110,9 @@ class Assembler implements Runnable {
                 robotPool.hire(EngineRobot.class, this);
                 robotPool.hire(DriveTrainRobot.class, this);
                 robotPool.hire(WheelRobot.class, this);
+                robotPool.hire(ExhaustSystemRobot.class, this);
+                robotPool.hire(CarBodyRobot.class, this);
+                robotPool.hire(BumperRobot.class, this);
                 barrier.await(); // Until the robots finish
                 // Put CarB into finishingQueue for further work
                 finishingQueue.put(CarB);
@@ -186,6 +202,36 @@ abstract class Robot implements Runnable {
     }
 }
 
+class ExhaustSystemRobot extends Robot {
+    public ExhaustSystemRobot(RobotPool pool) {
+        super(pool);
+    }
+
+    protected void performService() {
+        System.out.println(this + " installing ExhaustSystem");
+        assembler.CarB().addExhaustSystem();
+    }
+}
+class CarBodyRobot extends Robot {
+    public CarBodyRobot(RobotPool pool) {
+        super(pool);
+    }
+
+    protected void performService() {
+        System.out.println(this + " installing CarBody");
+        assembler.CarB().addCarBody();
+    }
+}
+class BumperRobot extends Robot {
+    public BumperRobot(RobotPool pool) {
+        super(pool);
+    }
+
+    protected void performService() {
+        System.out.println(this + " installing bumper");
+        assembler.CarB().addBumper();
+    }
+}
 class EngineRobot extends Robot {
     public EngineRobot(RobotPool pool) {
         super(pool);
@@ -254,6 +300,9 @@ public class CarBuilder {
         exec.execute(new EngineRobot(robotPool));
         exec.execute(new DriveTrainRobot(robotPool));
         exec.execute(new WheelRobot(robotPool));
+        exec.execute(new ExhaustSystemRobot(robotPool));
+        exec.execute(new CarBodyRobot(robotPool));
+        exec.execute(new BumperRobot(robotPool));
         exec.execute(new Assembler(chassisQueue, finishingQueue, robotPool));
         exec.execute(new Reporter(finishingQueue));
         // Start everything running by producing chassis:
