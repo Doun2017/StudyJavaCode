@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.35 WebBankTellerSimulation.java 顾客变多时增加teller，变少时不减少以观察最后teller数量稳定在哪里说明当前系统的负荷，仿真时还需改变顾客产生的时间间隔以仿真流量。
         //practice 21.36(本书中最难的练习 没有之一) RestaurantWithQueuesE.java
         //practice 21.37 CarBuilder.java
+        //practice 21.38 HouseBuilder.java
 
     }
 }
