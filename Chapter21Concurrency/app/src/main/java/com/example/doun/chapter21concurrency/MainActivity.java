@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
         //practice 21.37 CarBuilder.java
         //practice 21.38 HouseBuilder.java
         //practice 21.39 书中例子FastSimulation.java 我的解答FastSimulationSync.java 官方答案E39_FastSimulation2.java
+        //practice 21.40 ReaderWriterMapPack包 ReaderWriterMap.java
+        //practice 21.41 ActiveObjectDemo.java
 
     }
 }
